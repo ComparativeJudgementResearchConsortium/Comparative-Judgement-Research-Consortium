@@ -8,24 +8,28 @@ sidebar_label: Home
 <!-- Page-scoped styles for hero (edit text below as needed) -->
 <style>
 	.hero { background: linear-gradient(90deg,#0ea5a6 0%,#2563eb 60%,#7c3aed 100%); color:#fff; padding:48px 20px; border-radius:8px; margin:18px 0; }
-	.hero-inner { max-width:1100px; margin:0 auto; }
+	.hero-inner { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:24px; }
 	.hero h1 { font-size:2.05rem; line-height:1.12; margin:0 0 10px; font-weight:700; }
 	.hero-sub { margin:0 0 18px; color: rgba(235,246,255,0.9); font-size:1.05rem; }
 	.cta-row .btn { background:#ffffff; color:#1f2937; border:none; padding:10px 18px; border-radius:8px; font-weight:600; }
 	.cta-row .btn[disabled] { opacity:0.9; cursor:default; }
 	@media (max-width:700px) { .hero { padding:28px 12px; } .hero h1 { font-size:1.5rem; } }
+	@media (max-width:700px) { .hero-inner { flex-direction:column; align-items:flex-start; } .hero-logo img { max-height:80px; margin-top:12px; } }
 </style>
 
 <!-- Hero block: edit the text below to customise the hero -->
 <div class="hero">
-	<div class="hero-inner">
-		<h1>Comparative Judgement Research Consortium</h1>
-		<p class="hero-sub">An interdisciplinary consotirum of researchs all using and developing comparative judgement methods.</p>
-		<p class="cta-row"><a class="btn btn-primary" href="http://www.jiscmail.ac.uk/COMPARATIVE-JUDGEMENT" target="_blank" rel="noopener noreferrer">Sign up to our mailing list</a></p>
-	</div>
+ 	<div class="hero-inner">
+ 		<div class="hero-text">
+ 			<h1>Comparative Judgement Research Consortium</h1>
+ 			<p class="hero-sub">An interdisciplinary consortium of researchers who use and develop comparative judgement methods.</p>
+ 			<p class="cta-row"><a class="btn btn-primary" href="http://www.jiscmail.ac.uk/COMPARATIVE-JUDGEMENT" target="_blank" rel="noopener noreferrer">Sign up to our mailing list</a></p>
+ 		</div>
+ 		<div class="hero-logo">
+ 			<img src="images/CJLogotransparentsmall.png" alt="CJRC logo" style="max-height:110px; width:auto; display:block;" />
+ 		</div>
+ 	</div>
 </div>
-
-![Logo here](images/CJLogotransparentsmall.png)
 
 This international group brings together researchers and practitioners from diverse fields including mathematics, education, psychology, and computer science. We are dedicated to advancing the understanding and application of comparative judgement through collaborative research and practice. The group was founded in 2023 by [Ian Jones](https://www.lboro.ac.uk/departments/maths-education/staff/ian-jones/), [Marie-Josee Bisson](https://www.dmu.ac.uk/about-dmu/academic-staff/health-and-life-sciences/marie-josee-bisson/marie-josee-bisson.aspx), and [Rowland Seymour](https://www.birmingham.ac.uk/staff/profiles/maths/seymour-rowland). 
 
