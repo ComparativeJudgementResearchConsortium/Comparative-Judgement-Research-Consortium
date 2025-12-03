@@ -1,13 +1,29 @@
 ---
 id: index
-title: Welcome
+title: Welcome to the Comparative Judgement Research Consortium!
 sidebar_label: Home
 ---
 
-Welcome to the Comparative Judgement Research Consortium!
 
-<!-- Hero image inserted below -->
-<img src="assets/hero.svg" alt="Comparative Judgement Research Consortium" style="width:100%;height:auto;max-height:420px;object-fit:cover;border-radius:6px;margin-bottom:20px;" />
+<!-- Page-scoped styles for hero (edit text below as needed) -->
+<style>
+	.hero { background: linear-gradient(90deg,#0ea5a6 0%,#2563eb 60%,#7c3aed 100%); color:#fff; padding:48px 20px; border-radius:8px; margin:18px 0; }
+	.hero-inner { max-width:1100px; margin:0 auto; }
+	.hero h1 { font-size:2.05rem; line-height:1.12; margin:0 0 10px; font-weight:700; }
+	.hero-sub { margin:0 0 18px; color: rgba(235,246,255,0.9); font-size:1.05rem; }
+	.cta-row .btn { background:#ffffff; color:#1f2937; border:none; padding:10px 18px; border-radius:8px; font-weight:600; }
+	.cta-row .btn[disabled] { opacity:0.9; cursor:default; }
+	@media (max-width:700px) { .hero { padding:28px 12px; } .hero h1 { font-size:1.5rem; } }
+</style>
+
+<!-- Hero block: edit the text below to customise the hero -->
+<div class="hero">
+	<div class="hero-inner">
+		<h1>Comparative Judgement Research Consortium</h1>
+		<p class="hero-sub">An interdisciplinary consotirum of researchs all using and developing comparative judgement methods.</p>
+		<p class="cta-row"><a class="btn btn-primary" href="http://www.jiscmail.ac.uk/COMPARATIVE-JUDGEMENT" target="_blank" rel="noopener noreferrer">Sign up to our mailing list</a></p>
+	</div>
+</div>
 
 ![Logo here](images/CJLogotransparentsmall.png)
 
@@ -27,10 +43,10 @@ Here's a simplified explanation of how comparative judgment works:
 <div style="background: rgba(255,255,255,0.04); border-left: 4px solid #60a5fa; padding:16px; border-radius:8px; margin:16px 0;">
 	<strong style="display:block; font-size:1.05em; margin-bottom:8px;">How comparative judgement works</strong>
 	<ul style="margin:0; padding-left:18px;">
-		<li><strong>Pairs of Items:</strong> Assessors are presented with pairs to compare (e.g., essays, project proposals, artwork).</li>
-		<li><strong>Decision Making:</strong> Assessors choose which item is better based on criteria or professional judgement.</li>
-		<li><strong>Iterative Process:</strong> Many pairwise comparisons are collected across assessors and items.</li>
-		<li><strong>Ranking:</strong> The collected judgments are analysed to produce a ranked ordering of items.</li>
+		<li> Assessors are presented with pairs to compare (e.g., essays, project proposals, artwork).</li>
+		<li> Assessors choose which item is better based on criteria or professional judgement.</li>
+		<li> Many pairwise comparisons are collected across assessors and items.</li>
+		<li>The collected judgments are analysed to produce a ranked ordering of items.</li>
 	</ul>
 </div>
 
