@@ -36,7 +36,15 @@ This international group brings together researchers and practitioners from dive
 Join us for regular meetings, take part in our online reading group, access our comprehensive resource lists, and connect with a vibrant community committed to innovation and excellence in comparative judgement. Explore our site to learn more about our work and how you can get involved!
 
 ## Joining the Group
-To join our group send an email to LISTSERV@JISCMAIL.AC.UK with the body SUBSCRIBE COMPARATIVE-JUDGEMENT _FirstName LastName_. Or you can sign up on the [JISCMail website](http://www.jiscmail.ac.uk/COMPARATIVE-JUDGEMENT). 
+
+<div class="signup-card">
+	<p>Join the Comparative Judgement Research Consortium — choose the option that suits you:</p>
+	<ul>
+		<li><strong>Email:</strong> Send an email to <code>LISTSERV@JISCMAIL.AC.UK</code> with the body <code>SUBSCRIBE COMPARATIVE-JUDGEMENT FirstName LastName</code> to subscribe via email.</li>
+		<li><strong>Online:</strong> Subscribe via the JISCMail page below.</li>
+	</ul>
+	<p><a class="btn btn-primary" href="http://www.jiscmail.ac.uk/COMPARATIVE-JUDGEMENT" target="_blank" rel="noopener noreferrer">Subscribe on JISCMail</a></p>
+</div>
 
 ## What is Comparative Judgement
 Comparative judgment is a method used in assessment and evaluation to compare and rank different items or performances based on their perceived quality or merit. Instead of assigning absolute scores or grades to individual items, comparative judgment involves comparing pairs of items and determining which is better or of higher quality.
