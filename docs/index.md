@@ -15,6 +15,17 @@ sidebar_label: Home
 	.cta-row .btn[disabled] { opacity:0.9; cursor:default; }
 	@media (max-width:700px) { .hero { padding:28px 12px; } .hero h1 { font-size:1.5rem; } }
 	@media (max-width:700px) { .hero-inner { flex-direction:column; align-items:flex-start; } .hero-logo img { max-height:80px; margin-top:12px; } }
+
+	/* Signup card + generic buttons (used in Joining the Group) */
+	.signup-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(96,165,250,0.06); padding:18px; border-radius:8px; margin:14px 0 22px; }
+	.signup-card p { margin:0 0 8px; color: rgba(0,0,0,0.8); }
+	.signup-card ul { margin:0 0 12px; padding-left:20px; color: rgba(0,0,0,0.8); }
+	.btn { display:inline-block; text-decoration:none; padding:10px 16px; border-radius:8px; font-weight:600; }
+	.btn-primary { background:#2563eb; color:white; border: none; }
+	@media (prefers-color-scheme: dark) {
+		.signup-card { background: rgba(255,255,255,0.03); }
+		.signup-card p, .signup-card ul { color: rgba(255,255,255,0.92); }
+	}
 </style>
 
 <!-- Hero block: edit the text below to customise the hero -->
@@ -38,7 +49,6 @@ Join us for regular meetings, take part in our online reading group, access our 
 ## Joining the Group
 
 <div class="signup-card">
-	<p>Join the Comparative Judgement Research Consortium — choose the option that suits you:</p>
 	<ul>
 		<li><strong>Email:</strong> Send an email to <code>LISTSERV@JISCMAIL.AC.UK</code> with the body <code>SUBSCRIBE COMPARATIVE-JUDGEMENT FirstName LastName</code> to subscribe via email.</li>
 		<li><strong>Online:</strong> Subscribe via the JISCMail page below.</li>
