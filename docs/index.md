@@ -17,13 +17,13 @@ sidebar_label: Home
 	@media (max-width:700px) { .hero-inner { flex-direction:column; align-items:flex-start; } .hero-logo img { max-height:80px; margin-top:12px; } }
 
 	/* Signup card + generic buttons (used in Joining the Group) */
-	.signup-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(96,165,250,0.06); padding:18px; border-radius:8px; margin:14px 0 22px; }
+	.signup-card { background: rgba(0, 76, 255, 0.5); border: 1px solid rgba(96,165,250,0.06); padding:18px; border-radius:8px; margin:14px 0 22px; }
 	.signup-card p { margin:0 0 8px; color: rgba(0,0,0,0.8); }
 	.signup-card ul { margin:0 0 12px; padding-left:20px; color: rgba(0,0,0,0.8); }
 	.btn { display:inline-block; text-decoration:none; padding:10px 16px; border-radius:8px; font-weight:600; }
 	.btn-primary { background:#2563eb; color:white; border: none; }
 	@media (prefers-color-scheme: dark) {
-		.signup-card { background: rgba(255,255,255,0.03); }
+		.signup-card { background: rgba(0, 76, 225, 0.5); }
 		.signup-card p, .signup-card ul { color: rgba(255,255,255,0.92); }
 	}
 </style>
