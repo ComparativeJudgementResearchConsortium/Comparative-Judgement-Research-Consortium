@@ -28,6 +28,19 @@ sidebar_label: Home
 	}
 </style>
 
+<!-- Carousel styles for acknowledgements logos -->
+<style>
+	.logo-carousel { overflow:hidden; margin:18px 0; }
+	.logo-track { display:flex; gap:36px; align-items:center; width:max-content; animation:scroll-left 24s linear infinite; }
+	.logo-track:hover { animation-play-state:paused; }
+	.logo-track img { max-height:56px; display:block; filter:grayscale(0.05) contrast(0.95); }
+	@keyframes scroll-left {
+		0% { transform:translateX(0); }
+		100% { transform:translateX(-50%); }
+	}
+	@media (max-width:700px) { .logo-track img { max-height:44px; } }
+</style>
+
 <!-- Hero block: edit the text below to customise the hero -->
 <div class="hero">
  	<div class="hero-inner">
@@ -77,4 +90,21 @@ One advantage of comparative judgment is that it allows for a more nuanced and r
 There are both manual and automated ways to implement comparative judgment. Manual methods involve people making the comparisons, while automated systems use algorithms to analyze the data and derive rankings. Automated systems can efficiently handle large-scale assessments, making comparative judgment a versatile approach in various fields, including education, art, and professional evaluations.
 
 ## Acknowledgements
-This group was set up through a National Centre for Research Methods Special Interest Group grant and then sustained with support from the London Mathematical Society, Bath Spa University, and a UKRI Future Leaders Fellowship [MR/X034992/1]. 
+This group was set up through a National Centre for Research Methods Special Interest Group grant and then sustained with support from the London Mathematical Society, Bath Spa University, and a UKRI Future Leaders Fellowship [MR/X034992/1].
+
+<!-- Logos carousel -->
+<div class="logo-carousel" aria-hidden="false" aria-label="Acknowledgements logos">
+	<div class="logo-track" aria-hidden="false">
+		<img src="images/CJLogotransparentsmall.png" alt="CJRC logo" />
+		<img src="images/GH1vOv-XMAAanko.jpg" alt="Bath Spa Logo" />
+		<img src="images/NCRM_logo.jpg" alt="NCRM logo" />
+		<img src="images/UKRI-Logo_Horiz-RGB.png" alt="UKRI logo" />
+		<img src="images/logo.png" alt="London Mathematical Society Logo" />
+		<!-- duplicate for seamless scroll -->
+		<img src="images/CJLogotransparentsmall.png" alt="CJRC logo" />
+		<img src="images/GH1vOv-XMAAanko.jpg" alt="Bath Spa Logo" />
+		<img src="images/NCRM_logo.jpg" alt="NCRM logo" />
+		<img src="images/UKRI-Logo_Horiz-RGB.png" alt="UKRI logo" />
+		<img src="images/logo.png" alt="London Mathematical Society Logo" />
+	</div>
+</div>
