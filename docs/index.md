@@ -93,7 +93,7 @@ One advantage of comparative judgment is that it allows for a more nuanced and r
 There are both manual and automated ways to implement comparative judgment. Manual methods involve people making the comparisons, while automated systems use algorithms to analyze the data and derive rankings. Automated systems can efficiently handle large-scale assessments, making comparative judgment a versatile approach in various fields, including education, art, and professional evaluations.
 
 ## Acknowledgements
-This group was set up through a National Centre for Research Methods Special Interest Group grant and then sustained with support from the London Mathematical Society, Bath Spa University, and a UKRI Future Leaders Fellowship [MR/X034992/1].
+This group was set up through a National Centre for Research Methods Special Interest Group grant and then sustained with support from the London Mathematical Society, Bath Spa University, an EPSRC Mathematical Sciences Discipline Hopping Grant [UKRI2389], and a UKRI Future Leaders Fellowship [MR/X034992/1].
 
 <!-- Logos carousel (one logo per slide) -->
 <div class="carousel" aria-roledescription="carousel" aria-label="Acknowledgements logos">
