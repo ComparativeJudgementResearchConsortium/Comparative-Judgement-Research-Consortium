@@ -30,15 +30,18 @@ sidebar_label: Home
 
 <!-- Carousel styles for acknowledgements logos -->
 <style>
-	.logo-carousel { overflow:hidden; margin:18px 0; }
-	.logo-track { display:flex; gap:36px; align-items:center; width:max-content; animation:scroll-left 24s linear infinite; }
-	.logo-track:hover { animation-play-state:paused; }
-	.logo-track img { max-height:56px; display:block; filter:grayscale(0.05) contrast(0.95); }
-	@keyframes scroll-left {
-		0% { transform:translateX(0); }
-		100% { transform:translateX(-50%); }
-	}
-	@media (max-width:700px) { .logo-track img { max-height:44px; } }
+	/* Single-slide carousel styles */
+	.carousel { position:relative; width:100%; max-width:880px; margin:18px auto; overflow:hidden; }
+	.carousel-track { display:flex; transition:transform 0.5s ease; }
+	.carousel-slide { min-width:100%; display:flex; align-items:center; justify-content:center; padding:18px 0; }
+	.carousel-slide img { max-height:80px; width:auto; filter:grayscale(0.05) contrast(0.95); }
+	.carousel-button { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.45); color:#fff; border:none; width:36px; height:36px; border-radius:18px; display:flex; align-items:center; justify-content:center; cursor:pointer; }
+	.carousel-button.prev { left:8px; }
+	.carousel-button.next { right:8px; }
+	.carousel-dots { display:flex; gap:8px; justify-content:center; margin-top:10px; }
+	.carousel-dots .dot { width:10px; height:10px; border-radius:50%; background:#cbd5e1; border:none; cursor:pointer; }
+	.carousel-dots .dot.active { background:#2563eb; }
+	@media (max-width:700px) { .carousel-slide img { max-height:56px; } .carousel-button { width:32px; height:32px; } }
 </style>
 
 <!-- Hero block: edit the text below to customise the hero -->
@@ -92,19 +95,57 @@ There are both manual and automated ways to implement comparative judgment. Manu
 ## Acknowledgements
 This group was set up through a National Centre for Research Methods Special Interest Group grant and then sustained with support from the London Mathematical Society, Bath Spa University, and a UKRI Future Leaders Fellowship [MR/X034992/1].
 
-<!-- Logos carousel -->
-<div class="logo-carousel" aria-hidden="false" aria-label="Acknowledgements logos">
-	<div class="logo-track" aria-hidden="false">
-		<img src="images/CJLogotransparentsmall.png" alt="CJRC logo" />
-		<img src="images/GH1vOv-XMAAanko.jpg" alt="Bath Spa Logo" />
-		<img src="images/NCRM_logo.jpg" alt="NCRM logo" />
-		<img src="images/UKRI-Logo_Horiz-RGB.png" alt="UKRI logo" />
-		<img src="images/logo.png" alt="London Mathematical Society Logo" />
-		<!-- duplicate for seamless scroll -->
-		<img src="images/CJLogotransparentsmall.png" alt="CJRC logo" />
-		<img src="images/GH1vOv-XMAAanko.jpg" alt="Bath Spa Logo" />
-		<img src="images/NCRM_logo.jpg" alt="NCRM logo" />
-		<img src="images/UKRI-Logo_Horiz-RGB.png" alt="UKRI logo" />
-		<img src="images/logo.png" alt="London Mathematical Society Logo" />
+<!-- Logos carousel (one logo per slide) -->
+<div class="carousel" aria-roledescription="carousel" aria-label="Acknowledgements logos">
+	<div class="carousel-track">
+		<div class="carousel-slide"><img src="images/CJLogotransparentsmall.png" alt="CJRC logo" /></div>
+		<div class="carousel-slide"><img src="images/GH1vOv-XMAAanko.jpg" alt="Bath Spa logo" /></div>
+		<div class="carousel-slide"><img src="images/EPSRC.png" alt="EPSRC logo" /></div>
+		<div class="carousel-slide"><img src="images/NCRM_logo.jpg" alt="NCRM logo" /></div>
+		<div class="carousel-slide"><img src="images/UKRI-Logo_Horiz-RGB.png" alt="UKRI logo" /></div>
+		<div class="carousel-slide"><img src="images/logo.png" alt="London Mathematical Society logo" /></div>
 	</div>
+	<button class="carousel-button prev" aria-label="Previous logo">‹</button>
+	<button class="carousel-button next" aria-label="Next logo">›</button>
+	<div class="carousel-dots" role="tablist" aria-hidden="false">
+		<button class="dot" aria-label="Logo 1" aria-selected="true"></button>
+		<button class="dot" aria-label="Logo 2" aria-selected="false"></button>
+		<button class="dot" aria-label="Logo 3" aria-selected="false"></button>
+		<button class="dot" aria-label="Logo 4" aria-selected="false"></button>
+		<button class="dot" aria-label="Logo 5" aria-selected="false"></button>
+		<button class="dot" aria-label="Logo 6" aria-selected="false"></button>
+	</div>
+	<script>
+		(function(){
+			const carousel = document.currentScript.parentElement;
+			const track = carousel.querySelector('.carousel-track');
+			const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+			const prev = carousel.querySelector('.carousel-button.prev');
+			const next = carousel.querySelector('.carousel-button.next');
+			const dots = Array.from(carousel.querySelectorAll('.dot'));
+			let index = 0;
+			let autoplay = true;
+			let timer = null;
+
+			function update() {
+				track.style.transform = `translateX(-${index * 100}%)`;
+				dots.forEach((d,i)=>{ d.classList.toggle('active', i===index); d.setAttribute('aria-selected', i===index); });
+			}
+
+			function go(n) { index = (n + slides.length) % slides.length; update(); }
+
+			prev.addEventListener('click', ()=>{ go(index-1); resetTimer(); });
+			next.addEventListener('click', ()=>{ go(index+1); resetTimer(); });
+			dots.forEach((d,i)=> d.addEventListener('click', ()=>{ go(i); resetTimer(); }));
+
+			function startTimer(){ if(timer) clearInterval(timer); timer = setInterval(()=>{ go(index+1); }, 3000); }
+			function resetTimer(){ if(autoplay) startTimer(); }
+
+			carousel.addEventListener('mouseenter', ()=>{ autoplay=false; if(timer) clearInterval(timer); });
+			carousel.addEventListener('mouseleave', ()=>{ autoplay=true; startTimer(); });
+
+			// initialise
+			update(); startTimer();
+		})();
+	</script>
 </div>
