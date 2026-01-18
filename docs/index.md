@@ -52,7 +52,7 @@ sidebar_label: Home
  			<p class="hero-sub">An interdisciplinary consortium of researchers who use and develop comparative judgement methods.</p>
  			<p class="cta-row"><a class="btn btn-primary" href="http://www.jiscmail.ac.uk/COMPARATIVE-JUDGEMENT" target="_blank" rel="noopener noreferrer">Sign up to our mailing list</a></p>
  		</div>
- 		<div class="hero-logo">
+ 		<div class="hero-logo" style="background:white; padding:10px;">
  			<img src="images/CJLogotransparentsmall.png" alt="CJRC logo" style="max-height:110px; width:auto; display:block;" />
  		</div>
  	</div>
