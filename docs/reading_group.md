@@ -7,6 +7,7 @@ We run a regular reading group discussing comparative judgement papers from a wi
 
 | Month       | Citation |
 |-------------|----------|
+| February 26 |Aczel, T., Theis, L., & Roger, W. (2025). Efficient Bayesian Inference from Noisy Pairwise Comparisons. arXiv Preprint arXiv:2510.09333. [https://doi.org/10.48550/arXiv.2510.09333](https://doi.org/10.48550/arXiv.2510.09333) |
 | November 25 | Bartholomew, S. R., Mentzer, N., Jones, M., Sherman, D., & Baniya, S. (2020). Learning by evaluating (LbE) through adaptive comparative judgment. International Journal of Technology and Design Education, 1–15. [https://doi.org/10.1007/s10798-020-09639-1](https://doi.org/10.1007/s10798-020-09639-1) |
 | October 25 | Thurstone, L. L. (1927). A law of comparative judgment. Psychological Review, 34, 273–286. [https://doi.org/10.1037/h0070288](https://doi.org/10.1037/h0070288) |
 | July 25 | Kelly, K. T., Richardson, M., & Isaacs, T. (2022). Critiquing the rationales for using comparative judgement: A call for clarity. Assessment in Education: Principles, Policy & Practice, 29(6), 674–688. [https://doi.org/10.1080/0969594X.2022.2147901](https://doi.org/10.1080/0969594X.2022.2147901) |
