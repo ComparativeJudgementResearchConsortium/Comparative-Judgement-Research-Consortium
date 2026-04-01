@@ -7,6 +7,7 @@ We run a regular reading group discussing comparative judgement papers from a wi
 
 | Month       | Citation |
 |-------------|----------|
+| May 26 |Zerman, E., Hulusic, V., Valenzise, G., Mantiuk, R. K., & Dufaux, F. (2018). The relation between MOS and pairwise comparisons and the importance of cross-content comparisons. Electronic Imaging, 30, 1–6. [https://doi.org/10.48550/arXiv.2510.09333](https://doi.org/10.2352/ISSN.2470-1173.2018.14.HVEI-517)|
 | February 26 |Aczel, T., Theis, L., & Roger, W. (2025). Efficient Bayesian Inference from Noisy Pairwise Comparisons. arXiv Preprint arXiv:2510.09333. [https://doi.org/10.48550/arXiv.2510.09333](https://doi.org/10.48550/arXiv.2510.09333) |
 | November 25 | Bartholomew, S. R., Mentzer, N., Jones, M., Sherman, D., & Baniya, S. (2020). Learning by evaluating (LbE) through adaptive comparative judgment. International Journal of Technology and Design Education, 1–15. [https://doi.org/10.1007/s10798-020-09639-1](https://doi.org/10.1007/s10798-020-09639-1) |
 | October 25 | Thurstone, L. L. (1927). A law of comparative judgment. Psychological Review, 34, 273–286. [https://doi.org/10.1037/h0070288](https://doi.org/10.1037/h0070288) |
