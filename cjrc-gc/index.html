@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CJ Research Agenda Workshop</title>
+<style>
+  :root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f4ef;
+    --bg-tertiary: #ebeae3;
+    --text-primary: #1a1a1a;
+    --text-secondary: #6b6b66;
+    --text-tertiary: #95948e;
+    --text-info: #185fa5;
+    --text-success: #3b6d11;
+    --text-warning: #854f0b;
+    --border-tertiary: rgba(0,0,0,0.12);
+    --border-secondary: rgba(0,0,0,0.25);
+    --border-info: #378add;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    line-height: 1.5;
+  }
+  .container {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  input, select, textarea, button {
+    font-family: inherit;
+    font-size: 14px;
+    padding: 8px 10px;
+    border-radius: var(--radius-md);
+    border: 0.5px solid var(--border-secondary);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+  }
+  button {
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  button:hover:not(:disabled) { background: var(--bg-secondary); }
+  button:disabled { opacity: 0.4; cursor: not-allowed; }
+  textarea { resize: vertical; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+  .status-bar {
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    background: var(--bg-primary);
+    border: 0.5px solid var(--border-tertiary);
+    border-radius: var(--radius-md);
+    padding: 6px 12px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--text-tertiary);
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  .status-dot.connected { background: #3b6d11; }
+  .status-dot.error { background: #a32d2d; }
+</style>
+</head>
+<body>
+<h1 class="sr-only">CJ Research Agenda Workshop</h1>
+<div class="container">
+  <div id="app"></div>
+</div>
+<div class="status-bar"><span id="status-dot" class="status-dot"></span><span id="status-text">Connecting...</span></div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, doc, setDoc, deleteDoc, collection, onSnapshot, getDocs }
+  from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyB-2Vyi3-nIYvdFMPTB3kp2rlZ_CzMmAcg",
+  authDomain: "cjrc-gc.firebaseapp.com",
+  projectId: "cjrc-gc",
+  storageBucket: "cjrc-gc.firebasestorage.app",
+  messagingSenderId: "217789032946",
+  appId: "1:217789032946:web:51b461fe85a9418ca4e36b"
+};
+
+const fbApp = initializeApp(firebaseConfig);
+const db = getFirestore(fbApp);
+
+// === STATIC DATA: questions are baked in ===
+// IMPORTANT: replace REJECTED with your real rejected question wordings before workshop day.
+const ALL_QUESTIONS = [{"id":55,"rank":1,"text":"What are the best strategies for structuring a data collection that exposes individual raters to repeated pairs and/or sets of pairs that can reveal intransitivity and instability, in order to assess the reliability of individual raters and distinguish variation within rater from variation across raters?"},{"id":88,"rank":2,"text":"What's the best way of generalising from data on judgements made by a sample of judges to judgements made by a population of judges?"},{"id":3,"rank":3,"text":"How do we tell the difference between judges who are providing no information versus judges who have a different opinion to the rest of the group?"},{"id":85,"rank":4,"text":"How does cognitive load affect pairwise comparisons? Is there a threshold in the amount of information being processed beyond which comparison becomes harder than absolute judgement? If so, how can it be approximated?"},{"id":48,"rank":5,"text":"What are best approaches to developing CJs so that they yield reliable and valid scores when assessing individual differences? How to create optimal CJ designs that minimise the assessment length and complexity of CJ blocks but maximise reliability and construct validity? How to incorporate response time and other process data in CJ designs? How to balance desirability matching and latent attribute recovery?"},{"id":31,"rank":6,"text":"Reliability = consensus? Researchers sometimes use reliability measures (SSR/SHR) as an indicator of consensus between the judges about some construct. Is this a valid inference?"},{"id":6,"rank":7,"text":"How should we evaluate goodness-of-fit for comparative judgement models, and what diagnostics are most informative for people using them?"},{"id":45,"rank":8,"text":"What potential wider applications of CJ should be a focus for research (e.g. peer review of funding applications, driver training, sentencing decisions, recruitment, resource prioritisation)?"},{"id":32,"rank":9,"text":"Humans are often better at pairwise comparison than absolute scoring \u0096 is this still true when AI is the assessor?"},{"id":28,"rank":10,"text":"How do we best control for particular aspects of representations (e.g. length)? Can we factor these out of the CJ scores?"},{"id":24,"rank":11,"text":"How can the near-unlimited capacity/throughput of AI be harnessed? What might LLM training/fine-tuning be able to offer? Will results be well-adapted to CJ or to specific subject material? How can this be done in a framework which allows understanding of how various flavours of AI compare to each other and to human/expert judgement?"},{"id":16,"rank":12,"text":"When overall inter-rater reliability is low but higher reliability is observed within subsets of judges, what latent factors explain this pattern in collected pairwise judgements? Additionally, can we statistically identify these subsets of agreement, rather than through manual inspection?"},{"id":67,"rank":13,"text":"What does crowdsourcing reveal about the behaviour of comparative judgement as the number of judges increases, particularly regarding convergence with expert-panel outcomes and the distinctive role of experts?"},{"id":15,"rank":14,"text":"How can we measure and account for heterogeneity among judges in comparative judgement?"},{"id":94,"rank":15,"text":"How can we assess and improve the external validity of comparative judgment tasks, i.e., the degree to which the CJ task elicits the preferences/beliefs that drive judges' behaviour/choices in other contexts?"},{"id":82,"rank":16,"text":"What is the optimal way to do pair selection for CJ?"},{"id":101,"rank":17,"text":"What is the 'unit of measurement' in CJ, and to what extent should we expect it to be invariant across CJ studies that make comparisons of the same construct? When simulating judgement data from a CJ study, what principles should we use to set the standard deviation (or other distributional parameters) of theta?"},{"id":64,"rank":18,"text":"How do comparative judgement methods scale to large numbers of items or sparse comparison designs?"},{"id":99,"rank":19,"text":"What falsifiable claims about reality are embodied in the set of CJ scores that a set of objects receives post-Bradley-Terry analysis? How can/should these claims be tested and falsified?"},{"id":40,"rank":20,"text":"What makes a 'good' prompt for CJ sessions?"},{"id":87,"rank":21,"text":"What are the limits in terms of item length/complexity that assessors can cope with (perhaps based on cognitive load/working memory)? Are these the same for written vs. audio/video representations? How does it impact CJ scores and reliability?"},{"id":43,"rank":22,"text":"To what extent do comparative judgement outcomes remain stable across fully independent panels of judges, and how does this compare with stability estimated through split-halves reliability derived from a single judge cohort?"},{"id":69,"rank":23,"text":"Sliders: Rather than asking judges to make a binary choice, can we get better (more valid and reliable) results by asking judges to use a slider to indicate strength of preference?"},{"id":95,"rank":24,"text":"What experimental design principles can produce a set of comparisons that is both informative (of the representations' scores) and representative (of the space of possibly paired representations)?"},{"id":2,"rank":25,"text":"What specifically does it mean to be a bad judge and how should this be managed?"},{"id":39,"rank":26,"text":"How does communicating multiple judging criteria to judges impact judgements made? Does this affect session outcomes?"},{"id":54,"rank":27,"text":"Where there is a desire to generate overall evaluations as well as multiple subcomponent evaluations that are meant to be constituative of that overall evaluation, what are the best data collection and analysis practices for simultaneously generating these, while maintaining internal consistency?"},{"id":73,"rank":28,"text":"Under what sparsity, separation, and graph-connectivity conditions should we trust a full ranking, and when should we report ordered tiers instead?"},{"id":84,"rank":29,"text":"How can CJ generate meaningful actionable individual feedback for students?"},{"id":11,"rank":30,"text":"What is the most principled way to link or equate scales across separate comparative judgement exercises?"},{"id":20,"rank":31,"text":"How should we determine the minimum number of pairwise comparisons needed for reliable scale construction?"},{"id":12,"rank":32,"text":"Topping up: Is there a principled way to integrate existing judgement data into further research (e.g. adding new items and a small number of new judgements to an existing dataset)?"},{"id":42,"rank":33,"text":"What is the evidence (of multiple kinds?) that people are 'better' at comparative than absolute judgements?"},{"id":19,"rank":34,"text":"What is the best way to allocate comparison pairs based on prior knowledge?"},{"id":23,"rank":35,"text":"What is the impact of multiple representations coming from the same participant in (for example) a pre-post experimental design? Can we demonstrate that the BT model can cope with it?"},{"id":58,"rank":36,"text":"What cognitive strategies do judges use when making pairwise comparisons?"},{"id":5,"rank":37,"text":"What routine diagnostic workflow should accompany comparative judgement analyses to detect model misspecification? What evidence threshold should trigger a move from a one-dimensional Bradley\u0096Terry-type scale to a richer alternative?"},{"id":105,"rank":38,"text":"What is the best way to measure and communicate inter-rater reliability in CJ? How do the indices relate to traditional measures of inter-rater reliability?"},{"id":108,"rank":39,"text":"How should we evaluate the accuracy/quality of individual paired comparisons, given that the Bradley-Terry model 'expects' unlikely outcomes? Can accuracy be distinguished from quality in this context? How best to establish the link between speed of judgement and accuracy/quality?"},{"id":65,"rank":40,"text":"Is there more information in CJ data than a single 1d scale? (Both theoretical questions about whether/how this is possible even in idealised circumstances, and practical questions about feasibility.)"},{"id":14,"rank":41,"text":"Can we identify clusters of judges who appear to agree with each other more so than other judges?"},{"id":9,"rank":42,"text":"How can relative ability scores from comparative judgement be linked to absolute measures or external standards?"},{"id":61,"rank":43,"text":"How can we improve how the uncertainty/validity/reliability of scaled rankings is interpreted by end-users?"},{"id":70,"rank":44,"text":"How can we relate Bradley-Terry scores to external data using a joint modelling approach?"},{"id":30,"rank":45,"text":"Does making pairwise comparisons induce any type of cognitive bias in judges' decisions (such as anchoring bias or first-order bias)? If so, how does it impact session outcomes? How can these effects be mitigated?"},{"id":13,"rank":46,"text":"Does judge expertise significantly affect consistency, scale location, and feature sensitivity?"},{"id":38,"rank":47,"text":"How does inter-rater reliability differ between image-based and text-only versus multimodal artefacts in comparative judgement, controlling for number of judges and comparisons?"},{"id":10,"rank":48,"text":"To what extent can comparative judgement outcomes generated by different panels of judges, who judge the same items against different properties, be validly synthesised into a single overall score?"},{"id":74,"rank":49,"text":"When does a one-dimensional ranking fail, and how should we model systematic intransitivity?"},{"id":1,"rank":50,"text":"How can we identify and distinguish between reliable and unreliable judges?"},{"id":34,"rank":51,"text":"Does CJ tend to inflate measures of consensus compared to absolute scale methods?"},{"id":50,"rank":52,"text":"How to model socially desirable responding and faking in CJs statistically?"},{"id":41,"rank":53,"text":"Rating vs comparing: Does the method of pairwise comparisons give a misleading indication of participants' agreement?"},{"id":98,"rank":54,"text":"What role should behavioural phenomena, like systematic violations of transitivity and IIA, play in the analysis of comparative judgment data? Should the goal of data analysis be to reveal the presence of such patterns in CJ data, or to provide conclusions that are robust to the presence of these patterns?"},{"id":81,"rank":55,"text":"To what extent are comparative judgements an expression of stable latent preferences vs context-driven choices?"},{"id":71,"rank":56,"text":"How can we assess the quality of a fitted model in a principled Bayesian framework?"},{"id":78,"rank":57,"text":"How different do quality criteria have to be to give genuinely different scaled rank orders? Do stimulii that are 'better' tend to be better across essentially all criteria, or is it really possible with real-world answers to have quality criteria that are more orthogonal?"}];
+const REJECTED = [{"id":17,"rank":58,"text":"Should judge diversity be accounted for when designing CJ studies?"},{"id":110,"rank":59,"text":"To what extent can we still draw meaningful insight from collected pairwise judgements when inter-rater reliability is low?"},{"id":21,"rank":60,"text":"How does the mathematics change if we allow ties, and what are the choices around how we handle that?"},{"id":33,"rank":61,"text":"Why do we always get fairly high reliabilities in comparative judgement sessions, regardless of the judges or items?"},{"id":56,"rank":62,"text":"Can CJ be used to evaluate the consistency in marking between groups, rather than consistency between judges being used as a reliability metric?"},{"id":25,"rank":63,"text":"How do assessors allocate their visual attention across the pairs of representations when judging? Are there particular features of representations that are more salient?"},{"id":51,"rank":64,"text":"How to create CJ assessments that are well received by test takers? What are potential benefits of multimodal CJ assessments using audio, video, image stimuli?"},{"id":46,"rank":65,"text":"How do we get comparative judgement to be more accepted in a variety of disciplines?"},{"id":37,"rank":66,"text":"What are the limits of using CJ effectively for judging a wide range of non-text work (e.g. video, audio, art)?"},{"id":4,"rank":67,"text":"For currently-used diagnostic tools more generally: what are the weaknesses / blind-spots in current tools that need addressing?"},{"id":68,"rank":68,"text":"SSR vs SHR: What is the relationship between the two commonly used measures of reliability - scale separation reliability (SSR) and split-halves reliability (SHR)?"},{"id":93,"rank":69,"text":"Can we ever know that people are making judgements on the logit scale, and if not, how can we ensure that we are specifying the correct scale?"},{"id":53,"rank":70,"text":"Where there is a need for setting meaningful zero points or category thresholds for the latent measurement scale, what are good data collection and analysis practices for integrating scale calibration with comparative judgment?"},{"id":102,"rank":71,"text":"If a theta value can be interpreted as a probability, and a probability can be interpreted as a degree of subjective (un)certainty, then do the standard errors accompanying theta (post Bradley-Terry analysis) quantify the certainty in our certainty - and how should we interpret this? Are there important practical differences in whether we take a Bayesian or frequentist view of this?"},{"id":63,"rank":72,"text":"How can we identify latent groups or clusters of items through comparative judgement data?"},{"id":44,"rank":73,"text":"How can we model changes in CJ scores over time?"},{"id":59,"rank":74,"text":"What impact does the length of stimuli have on judgements?"},{"id":52,"rank":75,"text":"What is the role of cognitive ability in responding to CJ assessments of personality and other non-cognitive traits?"},{"id":18,"rank":76,"text":"When judges are students, to what extent do those whose scores are lower also make judgements that align less with the overall scaled rank order produced by other students and/or by experts?"},{"id":83,"rank":77,"text":"How does the effectiveness of using CJ for assessment and learning vary by age?"},{"id":35,"rank":78,"text":"Do judges learn anything while making CJ? If so, what and how?"},{"id":7,"rank":79,"text":"Should there be agreed standards about what is reported when a study has used a comparative judgement method?"},{"id":77,"rank":80,"text":"If we allow ties, to what extent do individual judges' ties line up with overall judgements (e.g. do some people use ties a lot more than others; do individuals' ties generally reflect very similar scores in the overall scaled rank order)?"},{"id":62,"rank":81,"text":"How can covariates be incorporated into comparative judgement models?"},{"id":79,"rank":82,"text":"Is CJ an equally fair and valid assessment method across neurodivergent and neurotypical populations (in terms of both judging and being assessed)?"},{"id":107,"rank":83,"text":"Does Thurstone's Law (or the Bradley-Terry model) need extending to apply to complex assessment artefacts?"},{"id":66,"rank":84,"text":"Can projects with strong theoretical, statistical and practical components push back on the idea that marking is a gold standard? Under what circumstances is marking/CJ better than the other in important educational/psychometric senses? What would a perfect such project look like and how close can we get to it in reality?"},{"id":75,"rank":85,"text":"What is the role of uncertainty in CJ decisions, beyond uncertainty reporting?"},{"id":29,"rank":86,"text":"What systematic biases related to cultural norms can be detected CJ outcomes?"},{"id":96,"rank":87,"text":"In what ways are statistical models of comparative judgment data, like the Bradley-Terry model, misspecified - i.e., do they fail to capture structure in CJ outcomes - and how does this affect the validity of the inferences drawn from these models?"},{"id":36,"rank":88,"text":"Is the first half of a judge's comparisons similar to their second half?"},{"id":60,"rank":89,"text":"Does CJ become less effective with stimuli with multiple pages (i.e., not presented side-by-side)?"},{"id":76,"rank":90,"text":"Educationally, what are the advantages and disadvantages of using actual student work versus examples designed to include specific strengths/weaknesses?"},{"id":22,"rank":91,"text":"Pre/post measures: In a pre-test/post-test design where CJ is used to score responses, is there a statistical rationale for putting all responses into one pool versus having separate pools for the pre- and post-test responses?"},{"id":112,"rank":92,"text":"How do we account for qualitative differences (wildly different objects, judges and criteria across studies and disciplines) in statistical models?"},{"id":97,"rank":93,"text":"What role should cognitive models play in the analysis of comparative judgment data?"},{"id":72,"rank":94,"text":"How can we develop scalable Bayesian methods for large data sets where typical methods (MCMC) are infeasible?"},{"id":49,"rank":95,"text":"What are best algorithms for scoring CJs in operational settings?"},{"id":106,"rank":96,"text":"Can some of Thurstone's Law (case V) assumptions be empirically tested?"},{"id":104,"rank":97,"text":"Most CJ exercises sample a subset of the n(n-1)/2 possible paired comparisons among n objects such that each object is involved in the same or a similar number of comparisons (e.g. c=20). The resulting data is then analysed with a Bradley-Terry model. If instead we compared (n-20) of the objects with the SAME 20 objects we would create a data set where we could simply add up the number of wins and rank the objects on their score out of 20, without involving the Bradley Terry model at all. What are the theoretical and practical differences between these situations and which is preferable? Do the long scales with lots of decimal places created by a typical CJ analysis disguise the fact that you don't really have more information than you'd get from a 20-item test? How does Cronbach's Alpha from the 'fixed set' CJ design compare with the Scale Separation Reliability usually reported from the Bradley-Terry analysis, both in theory and in practice?"},{"id":47,"rank":98,"text":"How to create assessments in comparative formats that minimize socially desirable responding and faking? How to best match stimuli on desirability in specific contexts (for example, in job hiring)?"},{"id":80,"rank":99,"text":"What are the most effective ways to maximise the educational value of the judging process within CJ?"},{"id":8,"rank":100,"text":"How can two objects be determined to have significantly different parameter estimates?"},{"id":86,"rank":101,"text":"Are there any cultural constraints on the adoption of CJ as an educational assessment tool beyond the Anglo-Saxon context? What are they, and how could they be overcome?"},{"id":111,"rank":102,"text":"How do different statistical models impact research outcomes? e.g., when an independent samples t-test is conducted on a set of CJ parameter estimates, how much does the test statistic vary across different models."},{"id":114,"rank":103,"text":"How reliably can clinicians use comparative judgement to rank brain MRI images according to severity of abnormality?"},{"id":92,"rank":104,"text":"How can we characterise Bradley-Terry models that have multi-modal likelihood functions?"},{"id":100,"rank":105,"text":"When CJ is used instead of marking (in educational assessment e.g. of essays), what is the equivalent of 'classification accuracy' (for example if you were to impose cut-scores on the CJ theta scale in order to give grades to the essays)?"},{"id":57,"rank":106,"text":"Could CJ be used as a professional development tool?"},{"id":91,"rank":107,"text":"How may we reduce the dimensionality of the parameter space for large Bradley-Terry models?"},{"id":90,"rank":108,"text":"Can reified entities be used to quantify preferences in the red bus-blue bus problem?"},{"id":27,"rank":109,"text":"Are there systematic biases in CJ related to handwriting, layout, or linguistic expression?"},{"id":103,"rank":110,"text":"The logistic distribution used in the Bradley-Terry model is a difference between Gumbel distributions. Do Gumbel distributions have any psychological justification or empirical support in educational assessment?"},{"id":89,"rank":111,"text":"In what ways can we quantify departures from Plackett-Luce likelihood functions?"},{"id":26,"rank":112,"text":"Which visual features of brain images (such as lesion size, contrast intensity, symmetry, or location) most strongly influence clinicians' comparative judgements?"},{"id":109,"rank":113,"text":"To what extent can CJ reliably measure consensus among mathematicians when evaluating complex mathematical proofs?"},{"id":113,"rank":114,"text":"Can interpretable models meaningfully explain variation in image-based CJ decisions to human judges?"}];
+
+const THEMES = [
+  'CJ in practice',
+  'Design, pairings & design',
+  'Judges, multi-criteria & AI',
+  'Learning, cognition & attention'
+];
+
+// Deterministic shuffle so all participants see the same split
+function seededShuffle(arr, seed) {
+  const a = arr.slice();
+  let s = seed;
+  const rand = () => { s = (s * 9301 + 49297) % 233280; return s / 233280; };
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+const SHUFFLED = seededShuffle(ALL_QUESTIONS, 42);
+const HALF_A = SHUFFLED.slice(0, 29);
+const HALF_B = SHUFFLED.slice(29);
+
+// === LOCAL STATE ===
+const STATE = {
+  user: null,    // { name, session, group?, theme? }
+  edits: {},
+  revivals: {},  // { groupNum: [questionId] }
+  themes: {},
+  cuts: {},
+  view: 'mine'
+};
+
+// Restore session from localStorage
+const saved = localStorage.getItem('cjrc_user');
+if (saved) {
+  try {
+    STATE.user = JSON.parse(saved);
+    STATE.view = STATE.user.session === 'morning' ? 'mine' : 'cull';
+  } catch (e) {}
+}
+
+// === FIRESTORE SYNC ===
+function setStatus(state, text) {
+  const dot = document.getElementById('status-dot');
+  const txt = document.getElementById('status-text');
+  dot.className = 'status-dot ' + state;
+  txt.textContent = text;
+}
+
+function startListening() {
+  setStatus('connected', 'Live');
+  onSnapshot(collection(db, 'edits'), (snap) => {
+    const next = {};
+    snap.forEach(d => next[d.id] = d.data());
+    STATE.edits = next;
+    render();
+  }, (err) => { setStatus('error', 'Sync error'); console.error(err); });
+
+  onSnapshot(collection(db, 'revivals'), (snap) => {
+    const next = {};
+    snap.forEach(d => next[d.id] = d.data().ids || []);
+    STATE.revivals = next;
+    render();
+  });
+
+  onSnapshot(collection(db, 'themes'), (snap) => {
+    const next = {};
+    snap.forEach(d => { const v = d.data().theme; if (v) next[d.id] = v; });
+    STATE.themes = next;
+    render();
+  });
+
+  onSnapshot(collection(db, 'cuts'), (snap) => {
+    const next = {};
+    snap.forEach(d => next[d.id] = d.data());
+    STATE.cuts = next;
+    render();
+  });
+}
+
+async function saveEdit(qid, text) {
+  await setDoc(doc(db, 'edits', String(qid)), {
+    text, by: STATE.user.name, at: new Date().toISOString()
+  });
+}
+async function clearEdit(qid) { await deleteDoc(doc(db, 'edits', String(qid))); }
+async function saveRevivals(group, ids) {
+  await setDoc(doc(db, 'revivals', String(group)), { ids });
+}
+async function saveTheme(qid, theme) {
+  if (theme) await setDoc(doc(db, 'themes', String(qid)), { theme });
+  else await deleteDoc(doc(db, 'themes', String(qid)));
+}
+async function saveCut(qid) {
+  await setDoc(doc(db, 'cuts', String(qid)), {
+    by: STATE.user.name, at: new Date().toISOString()
+  });
+}
+async function clearCut(qid) { await deleteDoc(doc(db, 'cuts', String(qid))); }
+
+// === RENDER ===
+const app = document.getElementById('app');
+
+function render() {
+  if (!STATE.user) { renderLogin(); return; }
+  if (STATE.user.session === 'morning') renderMorning();
+  else renderAfternoon();
+}
+
+function renderLogin() {
+  app.innerHTML = `
+    <div style="max-width: 460px; margin: 3rem auto; padding: 1.75rem; background: var(--bg-primary); border-radius: var(--radius-lg); border: 0.5px solid var(--border-tertiary);">
+      <h2 style="margin: 0 0 0.5rem; font-size: 18px; font-weight: 500;">CJ research agenda workshop</h2>
+      <p style="margin: 0 0 1.5rem; font-size: 14px; color: var(--text-secondary);">Sign in to start working with your group.</p>
+      <label style="display: block; font-size: 13px; color: var(--text-secondary); margin-bottom: 6px;">Your name</label>
+      <input id="name-input" type="text" placeholder="e.g. Rowland Seymour" style="width: 100%; margin-bottom: 1rem;" />
+      <label style="display: block; font-size: 13px; color: var(--text-secondary); margin-bottom: 6px;">Session</label>
+      <select id="session-input" style="width: 100%; margin-bottom: 1rem;">
+        <option value="morning">Morning (mixed groups, edit wording)</option>
+        <option value="afternoon">Afternoon (discipline groups, cull questions)</option>
+      </select>
+      <label style="display: block; font-size: 13px; color: var(--text-secondary); margin-bottom: 6px;">Group</label>
+      <select id="group-input" style="width: 100%; margin-bottom: 1.5rem;"></select>
+      <button id="login-btn" style="width: 100%; padding: 10px;">Sign in</button>
+    </div>
+  `;
+  const sessionSel = document.getElementById('session-input');
+  const groupSel = document.getElementById('group-input');
+  function refreshGroups() {
+    if (sessionSel.value === 'morning') {
+      groupSel.innerHTML = `<option value="">Select group...</option>
+        <option value="1">Group 1 (paired with Group 2)</option>
+        <option value="2">Group 2 (paired with Group 1)</option>
+        <option value="3">Group 3 (paired with Group 4)</option>
+        <option value="4">Group 4 (paired with Group 3)</option>`;
+    } else {
+      groupSel.innerHTML = `<option value="">Select discipline...</option>` +
+        THEMES.map(t => `<option value="${t}">${t}</option>`).join('');
+    }
+  }
+  refreshGroups();
+  sessionSel.onchange = refreshGroups;
+  document.getElementById('login-btn').onclick = () => {
+    const name = document.getElementById('name-input').value.trim();
+    const session = sessionSel.value;
+    const groupVal = groupSel.value;
+    if (!name || !groupVal) { alert('Please enter a name and select a group'); return; }
+    STATE.user = session === 'morning'
+      ? { name, session, group: parseInt(groupVal) }
+      : { name, session, theme: groupVal };
+    STATE.view = session === 'morning' ? 'mine' : 'cull';
+    localStorage.setItem('cjrc_user', JSON.stringify(STATE.user));
+    render();
+  };
+}
+
+function renderMorning() {
+  const u = STATE.user;
+  const myHalf = (u.group === 1 || u.group === 2) ? 'A' : 'B';
+  const otherGroup = u.group === 1 ? 2 : u.group === 2 ? 1 : u.group === 3 ? 4 : 3;
+  app.innerHTML = `
+    ${headerBar(`Group ${u.group}`, `Morning, paired with Group ${otherGroup} on Half ${myHalf}`)}
+    <div style="display: flex; gap: 4px; margin-bottom: 1.25rem; border-bottom: 0.5px solid var(--border-tertiary); flex-wrap: wrap;">
+      ${tabBtn('mine', 'My questions')}
+      ${tabBtn('other', `Group ${otherGroup}'s view`)}
+      ${tabBtn('revival', 'Revival pool')}
+      ${tabBtn('themes', 'Tag themes')}
+      ${tabBtn('export', 'Export')}
+    </div>
+    <div id="content"></div>
+  `;
+  hookHeader();
+  document.querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { STATE.view = b.dataset.tab; render(); });
+  if (STATE.view === 'mine') renderQuestionList(myHalf === 'A' ? HALF_A : HALF_B, true);
+  else if (STATE.view === 'other') renderQuestionList(myHalf === 'A' ? HALF_A : HALF_B, false);
+  else if (STATE.view === 'revival') renderRevival();
+  else if (STATE.view === 'themes') renderThemes(myHalf === 'A' ? HALF_A : HALF_B);
+  else if (STATE.view === 'export') renderExport();
+}
+
+function renderAfternoon() {
+  const u = STATE.user;
+  const taggedIds = Object.entries(STATE.themes).filter(([id, t]) => t === u.theme).map(([id]) => parseInt(id));
+  const allLive = ALL_QUESTIONS.concat(REJECTED);
+  const myQuestions = taggedIds.map(id => allLive.find(q => q.id === id)).filter(Boolean)
+    .sort((a, b) => a.rank - b.rank);
+  app.innerHTML = `
+    ${headerBar(u.theme, 'Afternoon cull session')}
+    <div style="display: flex; gap: 4px; margin-bottom: 1.25rem; border-bottom: 0.5px solid var(--border-tertiary); flex-wrap: wrap;">
+      ${tabBtn('cull', 'Cull questions')}
+      ${tabBtn('export', 'Export')}
+    </div>
+    <div id="content"></div>
+  `;
+  hookHeader();
+  document.querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { STATE.view = b.dataset.tab; render(); });
+  if (STATE.view === 'export') renderExport();
+  else renderCull(myQuestions);
+}
+
+function headerBar(title, subtitle) {
+  return `
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 0.5px solid var(--border-tertiary);">
+      <div>
+        <div style="font-size: 15px; font-weight: 500;">${escapeHtml(STATE.user.name)}</div>
+        <div style="font-size: 13px; color: var(--text-secondary);">${escapeHtml(title)} &middot; ${escapeHtml(subtitle)}</div>
+      </div>
+      <button id="logout" style="padding: 6px 12px;">Sign out</button>
+    </div>
+  `;
+}
+function hookHeader() {
+  document.getElementById('logout').onclick = () => {
+    STATE.user = null;
+    localStorage.removeItem('cjrc_user');
+    render();
+  };
+}
+function tabBtn(id, label) {
+  const active = STATE.view === id;
+  return `<button data-tab="${id}" style="border: none; background: transparent; padding: 8px 14px; font-size: 14px; color: ${active ? 'var(--text-primary)' : 'var(--text-secondary)'}; border-bottom: 2px solid ${active ? 'var(--text-primary)' : 'transparent'}; border-radius: 0; cursor: pointer; font-weight: ${active ? '500' : '400'};">${label}</button>`;
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function renderQuestionList(questions, editable) {
+  const c = document.getElementById('content');
+  c.innerHTML = `
+    <div style="font-size: 13px; color: var(--text-secondary); margin-bottom: 0.75rem;">
+      ${editable ? `${questions.length} questions in your half (random mix from all 57). Click to expand and edit. Edits sync live to your paired group.` : `Read-only view of what your paired group is editing.`}
+    </div>
+    <div id="qlist"></div>
+  `;
+  const list = document.getElementById('qlist');
+  questions.forEach(q => list.appendChild(questionCard(q, editable)));
+}
+
+function questionCard(q, editable) {
+  const edit = STATE.edits[q.id];
+  const currentText = edit ? edit.text : q.text;
+  const wrapper = document.createElement('div');
+  wrapper.style.cssText = 'background: var(--bg-primary); border: 0.5px solid var(--border-tertiary); border-radius: var(--radius-lg); padding: 12px 16px; margin-bottom: 8px;';
+  wrapper.innerHTML = `
+    <div style="display: flex; gap: 12px; align-items: flex-start; cursor: pointer;" data-toggle>
+      <div style="background: var(--bg-secondary); color: var(--text-secondary); font-size: 12px; padding: 2px 8px; border-radius: var(--radius-md); font-weight: 500; flex-shrink: 0; margin-top: 2px;">#${q.rank}</div>
+      <div style="flex: 1; font-size: 14px; line-height: 1.55;">${escapeHtml(currentText)}</div>
+      ${edit ? `<div style="font-size: 11px; color: var(--text-info); flex-shrink: 0; margin-top: 4px;">edited</div>` : ''}
+    </div>
+    <div data-body style="display: none; margin-top: 12px; padding-top: 12px; border-top: 0.5px solid var(--border-tertiary);">
+      <div style="font-size: 12px; color: var(--text-tertiary); margin-bottom: 4px;">Original wording</div>
+      <div style="font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin-bottom: 12px; padding: 8px 10px; background: var(--bg-tertiary); border-radius: var(--radius-md);">${escapeHtml(q.text)}</div>
+      ${editable ? `
+        <div style="font-size: 12px; color: var(--text-tertiary); margin-bottom: 4px;">Edit wording</div>
+        <textarea data-edit style="width: 100%; min-height: 80px; font-size: 14px; line-height: 1.5;">${escapeHtml(currentText)}</textarea>
+        <div style="display: flex; gap: 8px; margin-top: 8px; justify-content: flex-end;">
+          ${edit ? `<button data-revert style="padding: 6px 12px; font-size: 13px;">Revert to original</button>` : ''}
+          <button data-save style="padding: 6px 12px; font-size: 13px;">Save edit</button>
+        </div>
+        ${edit ? `<div style="font-size: 11px; color: var(--text-tertiary); margin-top: 8px;">Last edited by ${escapeHtml(edit.by)} at ${new Date(edit.at).toLocaleTimeString()}</div>` : ''}
+      ` : `<div style="font-size: 12px; color: var(--text-tertiary); font-style: italic;">Read-only view</div>`}
+    </div>
+  `;
+  const body = wrapper.querySelector('[data-body]');
+  wrapper.querySelector('[data-toggle]').onclick = (e) => {
+    if (e.target.closest('[data-edit], button')) return;
+    body.style.display = body.style.display === 'none' ? 'block' : 'none';
+  };
+  if (editable) {
+    wrapper.querySelector('[data-save]').onclick = async (e) => {
+      e.stopPropagation();
+      const newText = wrapper.querySelector('[data-edit]').value.trim();
+      if (!newText) return;
+      await saveEdit(q.id, newText);
+    };
+    const rb = wrapper.querySelector('[data-revert]');
+    if (rb) rb.onclick = async (e) => { e.stopPropagation(); await clearEdit(q.id); };
+  }
+  return wrapper;
+}
+
+function renderRevival() {
+  const c = document.getElementById('content');
+  const myRevivals = STATE.revivals[STATE.user.group] || [];
+  const remaining = 3 - myRevivals.length;
+  c.innerHTML = `
+    <div style="background: var(--bg-secondary); padding: 12px 16px; border-radius: var(--radius-md); margin-bottom: 1rem;">
+      <div style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">Revival pool</div>
+      <div style="font-size: 13px; color: var(--text-secondary);">Each group can revive up to 3 questions. Group ${STATE.user.group} has revived ${myRevivals.length} of 3.</div>
+    </div>
+    <div id="rlist"></div>
+  `;
+  const list = document.getElementById('rlist');
+  REJECTED.forEach(q => {
+    const isRevived = myRevivals.includes(q.id);
+    const otherRevived = Object.entries(STATE.revivals)
+      .filter(([g, ids]) => parseInt(g) !== STATE.user.group && (ids || []).includes(q.id))
+      .map(([g]) => `Group ${g}`);
+    const card = document.createElement('div');
+    card.style.cssText = `background: var(--bg-primary); border: 0.5px solid ${isRevived ? 'var(--border-info)' : 'var(--border-tertiary)'}; border-radius: var(--radius-md); padding: 10px 14px; margin-bottom: 6px; display: flex; gap: 12px; align-items: flex-start;`;
+    card.innerHTML = `
+      <div style="background: var(--bg-secondary); color: var(--text-secondary); font-size: 11px; padding: 2px 7px; border-radius: var(--radius-md); flex-shrink: 0; margin-top: 2px;">#${q.rank}</div>
+      <div style="flex: 1; font-size: 13px; line-height: 1.5;">
+        ${escapeHtml(q.text)}
+        ${otherRevived.length ? `<div style="font-size: 11px; color: var(--text-info); margin-top: 4px;">Also revived by ${otherRevived.join(', ')}</div>` : ''}
+      </div>
+      <button data-revive style="padding: 4px 10px; font-size: 12px; flex-shrink: 0;" ${(!isRevived && remaining <= 0) ? 'disabled' : ''}>${isRevived ? 'Un-revive' : 'Revive'}</button>
+    `;
+    card.querySelector('[data-revive]').onclick = async () => {
+      const g = STATE.user.group;
+      let next = (STATE.revivals[g] || []).slice();
+      if (isRevived) next = next.filter(id => id !== q.id);
+      else { if (next.length >= 3) return; next.push(q.id); }
+      await saveRevivals(g, next);
+    };
+    list.appendChild(card);
+  });
+}
+
+function renderThemes(questions) {
+  const c = document.getElementById('content');
+  c.innerHTML = `
+    <div style="background: var(--bg-secondary); padding: 12px 16px; border-radius: var(--radius-md); margin-bottom: 1rem;">
+      <div style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">Tag themes (afternoon prep)</div>
+      <div style="font-size: 13px; color: var(--text-secondary);">Tag each question with the discipline theme that fits best. Afternoon discipline groups will receive questions tagged with their theme.</div>
+    </div>
+    <div id="tlist"></div>
+  `;
+  const list = document.getElementById('tlist');
+  questions.forEach(q => {
+    const text = STATE.edits[q.id] ? STATE.edits[q.id].text : q.text;
+    const currentTheme = STATE.themes[q.id] || '';
+    const card = document.createElement('div');
+    card.style.cssText = 'background: var(--bg-primary); border: 0.5px solid var(--border-tertiary); border-radius: var(--radius-md); padding: 10px 14px; margin-bottom: 6px; display: flex; gap: 12px; align-items: flex-start;';
+    card.innerHTML = `
+      <div style="background: var(--bg-secondary); color: var(--text-secondary); font-size: 11px; padding: 2px 7px; border-radius: var(--radius-md); flex-shrink: 0; margin-top: 4px;">#${q.rank}</div>
+      <div style="flex: 1; font-size: 13px; line-height: 1.5;">${escapeHtml(text)}</div>
+      <select data-theme style="flex-shrink: 0; min-width: 220px; font-size: 12px;">
+        <option value="">No theme yet...</option>
+        ${THEMES.map(t => `<option value="${t}" ${currentTheme === t ? 'selected' : ''}>${t}</option>`).join('')}
+      </select>
+    `;
+    card.querySelector('[data-theme]').onchange = async (e) => {
+      await saveTheme(q.id, e.target.value);
+    };
+    list.appendChild(card);
+  });
+}
+
+function renderCull(questions) {
+  const c = document.getElementById('content');
+  if (questions.length === 0) {
+    c.innerHTML = `
+      <div style="background: var(--bg-secondary); padding: 16px; border-radius: var(--radius-md); text-align: center;">
+        <div style="font-size: 14px; color: var(--text-secondary);">No questions tagged "${escapeHtml(STATE.user.theme)}" yet.</div>
+        <div style="font-size: 12px; color: var(--text-tertiary); margin-top: 6px;">Morning groups need to finish theme tagging first.</div>
+      </div>`;
+    return;
+  }
+  const cutCount = questions.filter(q => STATE.cuts[q.id]).length;
+  const keepCount = questions.length - cutCount;
+  const target = Math.ceil(questions.length / 2);
+  const onTarget = keepCount <= target;
+  c.innerHTML = `
+    <div style="background: var(--bg-secondary); padding: 12px 16px; border-radius: var(--radius-md); margin-bottom: 1rem;">
+      <div style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">Cull session</div>
+      <div style="font-size: 13px; color: var(--text-secondary); margin-bottom: 10px;">Cut roughly half the questions tagged "${escapeHtml(STATE.user.theme)}". Cuts sync live across the group.</div>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <div style="background: var(--bg-primary); padding: 6px 12px; border-radius: var(--radius-md); font-size: 12px;"><span style="color: var(--text-secondary);">Total:</span> <strong style="font-weight: 500;">${questions.length}</strong></div>
+        <div style="background: var(--bg-primary); padding: 6px 12px; border-radius: var(--radius-md); font-size: 12px;"><span style="color: var(--text-secondary);">Keeping:</span> <strong style="font-weight: 500; color: ${onTarget ? 'var(--text-success)' : 'var(--text-warning)'};">${keepCount}</strong></div>
+        <div style="background: var(--bg-primary); padding: 6px 12px; border-radius: var(--radius-md); font-size: 12px;"><span style="color: var(--text-secondary);">Cut:</span> <strong style="font-weight: 500;">${cutCount}</strong></div>
+        <div style="background: var(--bg-primary); padding: 6px 12px; border-radius: var(--radius-md); font-size: 12px;"><span style="color: var(--text-secondary);">Target:</span> <strong style="font-weight: 500;">~${target}</strong></div>
+      </div>
+    </div>
+    <div id="culllist"></div>
+  `;
+  const list = document.getElementById('culllist');
+  questions.forEach(q => {
+    const text = STATE.edits[q.id] ? STATE.edits[q.id].text : q.text;
+    const cut = STATE.cuts[q.id];
+    const card = document.createElement('div');
+    card.style.cssText = `background: var(--bg-primary); border: 0.5px solid ${cut ? 'var(--border-tertiary)' : 'var(--border-secondary)'}; border-radius: var(--radius-md); padding: 10px 14px; margin-bottom: 6px; display: flex; gap: 12px; align-items: flex-start; opacity: ${cut ? '0.5' : '1'};`;
+    card.innerHTML = `
+      <div style="background: var(--bg-secondary); color: var(--text-secondary); font-size: 11px; padding: 2px 7px; border-radius: var(--radius-md); flex-shrink: 0; margin-top: 2px;">#${q.rank}</div>
+      <div style="flex: 1; font-size: 13px; line-height: 1.5; ${cut ? 'text-decoration: line-through;' : ''}">
+        ${escapeHtml(text)}
+        ${cut ? `<div style="font-size: 11px; color: var(--text-tertiary); margin-top: 4px; text-decoration: none;">Cut by ${escapeHtml(cut.by)} at ${new Date(cut.at).toLocaleTimeString()}</div>` : ''}
+      </div>
+      <button data-cut style="padding: 4px 10px; font-size: 12px; flex-shrink: 0;">${cut ? 'Restore' : 'Cut'}</button>
+    `;
+    card.querySelector('[data-cut]').onclick = async () => {
+      if (cut) await clearCut(q.id);
+      else await saveCut(q.id);
+    };
+    list.appendChild(card);
+  });
+}
+
+function renderExport() {
+  const c = document.getElementById('content');
+  c.innerHTML = `
+    <div style="background: var(--bg-secondary); padding: 16px; border-radius: var(--radius-md); margin-bottom: 1rem;">
+      <div style="font-size: 14px; font-weight: 500; margin-bottom: 6px;">Export workshop data</div>
+      <div style="font-size: 13px; color: var(--text-secondary); margin-bottom: 12px;">Downloads a CSV of all questions with current wording, edit history, theme tags, revival status, and cull decisions.</div>
+      <button id="export-btn" style="padding: 8px 16px;">Download CSV</button>
+    </div>
+  `;
+  document.getElementById('export-btn').onclick = exportCSV;
+}
+
+function exportCSV() {
+  const allQs = ALL_QUESTIONS.concat(REJECTED);
+  const revivedIds = new Set();
+  const revivedBy = {};
+  Object.entries(STATE.revivals).forEach(([g, ids]) => {
+    (ids || []).forEach(id => {
+      revivedIds.add(id);
+      if (!revivedBy[id]) revivedBy[id] = [];
+      revivedBy[id].push('G' + g);
+    });
+  });
+  const inTop57 = new Set(ALL_QUESTIONS.map(q => q.id));
+  const halfMap = {};
+  HALF_A.forEach(q => halfMap[q.id] = 'A');
+  HALF_B.forEach(q => halfMap[q.id] = 'B');
+
+  const rows = [['rank','id','status','half','original_text','final_text','edited_by','edited_at','theme','revived_by','cut','cut_by','cut_at']];
+  allQs.forEach(q => {
+    const inTop = inTop57.has(q.id);
+    const isRevived = revivedIds.has(q.id);
+    let status = inTop ? 'top57' : (isRevived ? 'revived' : 'rejected');
+    const edit = STATE.edits[q.id];
+    const theme = STATE.themes[q.id] || '';
+    const cut = STATE.cuts[q.id];
+    rows.push([
+      q.rank, q.id, status, halfMap[q.id] || '',
+      q.text, edit ? edit.text : q.text,
+      edit ? edit.by : '', edit ? edit.at : '',
+      theme, (revivedBy[q.id] || []).join(';'),
+      cut ? 'yes' : '', cut ? cut.by : '', cut ? cut.at : ''
+    ]);
+  });
+  const csv = rows.map(r => r.map(cell => {
+    const s = String(cell == null ? '' : cell);
+    return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+  }).join(',')).join('\n');
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `cjrc-agenda-${new Date().toISOString().slice(0,16).replace(':','-')}.csv`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// Bootstrap
+startListening();
+render();
+</script>
+</body>
+</html>
