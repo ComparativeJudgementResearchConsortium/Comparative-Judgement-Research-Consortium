@@ -7,6 +7,7 @@ We run a regular reading group discussing comparative judgement papers from a wi
 
 | Month       | Citation |
 |-------------|----------|
+| June 26 (11am Mon 22 June) | Stadthagen-González, H., Parafita Couto, M. C., Párraga, C. A., & Damian, M. F. (2019). Testing alternative theoretical accounts of code-switching: Insights from comparative judgments of adjective–noun order. International Journal of Bilingualism, 23(1), 200–220. [https://doi.org/10.1177/1367006917728390](https://doi.org/10.1177/1367006917728390) |
 | May 26 |Zerman, E., Hulusic, V., Valenzise, G., Mantiuk, R. K., & Dufaux, F. (2018). The relation between MOS and pairwise comparisons and the importance of cross-content comparisons. Electronic Imaging, 30, 1–6. [https://doi.org/10.48550/arXiv.2510.09333](https://doi.org/10.2352/ISSN.2470-1173.2018.14.HVEI-517)|
 | February 26 |Aczel, T., Theis, L., & Roger, W. (2025). Efficient Bayesian Inference from Noisy Pairwise Comparisons. arXiv Preprint arXiv:2510.09333. [https://doi.org/10.48550/arXiv.2510.09333](https://doi.org/10.48550/arXiv.2510.09333) |
 | November 25 | Bartholomew, S. R., Mentzer, N., Jones, M., Sherman, D., & Baniya, S. (2020). Learning by evaluating (LbE) through adaptive comparative judgment. International Journal of Technology and Design Education, 1–15. [https://doi.org/10.1007/s10798-020-09639-1](https://doi.org/10.1007/s10798-020-09639-1) |

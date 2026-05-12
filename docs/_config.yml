@@ -11,6 +11,10 @@ sidebar:
         - 2025-january
         - 2025-april
         - 2026-january
+        - 2026-may
+        - 2026-rss
+        - 2026-belgium
+        - 2026-oct
     - label: Resources
       children:
         - articles
