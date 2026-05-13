@@ -1,6 +1,6 @@
 ---
 id: 2026-belgium
-title: September 2026
+title: Learning Special 2026
 ---
 
 # Special Meeting of the Comparative Judgement Research Consortium
