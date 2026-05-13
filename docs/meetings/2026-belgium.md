@@ -6,6 +6,7 @@ title: Learning Special 2026
 # Special Meeting of the Comparative Judgement Research Consortium
 
 ## Focus on Comparative Judgement and Learning
+## Friday 11th September, 2026
 
 
 
