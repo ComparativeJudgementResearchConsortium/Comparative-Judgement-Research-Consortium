@@ -3,9 +3,9 @@ id: 2026-belgium
 title: September 2026
 ---
 
-# 6th Meeting of the Comparative Judgement Research Consortium
+# Special Meeting of the Comparative Judgement Research Consortium
 
-## Special Meeting on Comparative Judgement and Learning
+## Focus on Comparative Judgement and Learning
 
 
 
