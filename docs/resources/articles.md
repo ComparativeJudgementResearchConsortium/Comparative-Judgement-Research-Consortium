@@ -127,4 +127,3 @@ title: Articles
 | Title        | Authors | Publication |  Paper  |  Code  | Tags | Notes |
 | --------     | :-----: | :-----: |  :----: | :----: |----|----|
 | Measuring conceptual understanding: The case of fractions. | Ian Jones, Matthew Inglis, Camilla Gilmore, Jeremy Hodgen, J. | Proceedings of the 37th Conference of the International Group for the Psychology of Mathematics Education | [paper](https://doi.org/10.1007/s10763-013-9497-6](https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=2aa62501254b1a569fc666772fe740c62a893bd3)) | |
-

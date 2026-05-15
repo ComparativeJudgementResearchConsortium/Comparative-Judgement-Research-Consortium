@@ -1,5 +1,22 @@
 title: Comparative Judgement Research Consortium
+
+plugins:
+  - jekyll-scholar
+  - jekyll-scholar-csl
+  - jekyll-remote-theme
+
+baseurl: '/Comparative-Judgement-Research-Consortium'
+
+scholar:
+  source: _bibliography
+  style: ./_styles/apa_hyperlinks.csl
+  bibliography_template: bibliography_entry
+  locale: en
+  sort_by: author
+  order: ascending
+
 remote_theme: HiddenHarmsHub/jekyll-theme-zendesk-garden@main
+repository: catsmith/Comparative-Judgement-Research-Consortium
 search_enabled: true
 auto_page_title: true
 sidebar:
