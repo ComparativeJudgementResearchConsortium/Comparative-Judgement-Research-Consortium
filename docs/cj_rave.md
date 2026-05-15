@@ -1,5 +1,5 @@
 ---
-id: cj-rave
+id: cj_rave
 title: CJ RAVE Dataset
 ---
 
