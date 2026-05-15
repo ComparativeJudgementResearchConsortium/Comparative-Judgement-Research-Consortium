@@ -5,7 +5,7 @@ title: CJ RAVE Dataset
 
 ## Overview
 
-The CJ RAVE (Research Agenda Voting Exercise) dataset was collected at a special meeting of the Comparative Judgement Research Consortium held in Belgium in May 2026. Twenty-two researchers in the comparative judgement community judged pairs of research questions, indicating which question they considered higher priority for advancing the field.
+The CJ RAVE (Research Agenda Voting Exercise) dataset was collected at a special meeting of the Comparative Judgement Research Consortium held in Loughborough in May 2026. Twenty-two researchers in the comparative judgement community judged pairs of research questions, indicating which question they considered higher priority for advancing the field.
 
 The study comprised 114 research questions spanning topics such as judge reliability, model diagnostics, pair allocation strategies, AI integration, and psychometric foundations. Participants made 1198 pairwise comparisons in total. Rankings were estimated using a Bayesian Bradley-Terry model.
 
@@ -28,11 +28,18 @@ Each row represents one pairwise comparison made by one participant. Participant
 
 [Download CJRC2026_RAVE_llm.csv](https://github.com/codingWithAndy/Comparative-Judgement-Research-Consortium/blob/main/comparison_data/CJRC2026_RAVE_llm.csv)
 
-In addition to human judgements, all 6441 unique pairs (114 items x 113 / 2) were submitted to GPT-5.1 via the Azure API Management gateway. Of these, 6119 received a parseable response; the remaining 322 were marked invalid and excluded from this file. The model was given the following system prompt:
+In addition to human judgements, all 6441 unique pairs (114 items x 113 / 2) were submitted to GPT-5.1 via the Azure API Management gateway. Of these, 6119 received a parseable response; the remaining 322 were marked invalid and excluded from this file. The model was run at temperature 0.0 with the following system prompt:
 
-> *Which of these two research questions would most advance comparative judgement?*
+> *You are an expert in comparative judgement research methods. Which of these two research questions would most advance the theory or application of comparative judgement. Only answer with either A or B*
 
-The two research questions were presented as options A and B. The model response ("A" or "B") was parsed to identify the winning item. All pairs were completed in a single run. The `participant_id` column contains the model identifier (`gpt-5.1`). The column schema is identical to the human judgement file.
+Each pair was presented as a user message in the form:
+
+```
+A: <question text>
+B: <question text>
+```
+
+The model response ("A" or "B") was parsed to identify the winning item. All pairs were completed in a single run. The `participant_id` column contains the model identifier (`gpt-5.1`). The column schema is identical to the human judgement file.
 
 ## Top Research Questions
 
