@@ -53,7 +53,7 @@ This R script fits a Bayesian Bradley-Terry model to the RAVE comparison data us
 
 ## Top 10 Research Questions
 
-The 10 highest-priority research questions as estimated by the Bayesian Bradley-Terry model, ranked by posterior median score:
+The 10 highest-priority research questions as estimated by the Bayesian Bradley-Terry model from the human data, ranked by posterior median score:
 
 | Rank | Score | Question |
 |------|-------|----------|
