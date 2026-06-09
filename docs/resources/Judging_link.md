@@ -1,10 +1,10 @@
-# Comparative Judgement Task: Student Paragraphs about AI
+# Comparative Judgement Task: Student short answers about AI ethics
 
 Welcome to this comparative judgement activity. Thank you for taking the time to participate.
 
 ## What you need to do
 
-You will be shown pairs of student-written paragraphs on the topic of artificial intelligence. For each pair, your task is to decide which paragraph is better overall — using your professional judgement.
+You will be shown pairs of short answers on the topic of ethical issues around artificial intelligence. These have been created to represent typical brief student responses. For each pair, your task is to decide which answer is better overall — using your professional judgement.
 
 There is no single right answer. We are interested in your holistic impression of quality.
 
@@ -12,9 +12,9 @@ There is no single right answer. We are interested in your holistic impression o
 
 Please use the link below to access the judging interface:
 
-**[Judging link goes here]**
+**https://tinyurl.com/tryCJ**
 
-You will need to complete approximately **[X] comparisons**. This should take around **[Y] minutes**.
+You will need to complete approximately **20 comparisons**. This should take around **5 minutes**.
 
 ## A few things to note
 
@@ -25,8 +25,8 @@ You will need to complete approximately **[X] comparisons**. This should take ar
 
 ## Questions or problems?
 
-If you have any difficulties accessing the judging interface or have questions about the task, please contact **[contact name/email]**.
+If you have any difficulties accessing the judging interface or have questions about the task, please contact **Liz Dodson: e.a.dodson@lboro.ac.uk**.
 
 ---
 
-*[Placeholder: add any further context about the study or how results will be used here.]*
+*The purpose of this task is to provide hands on experience of comparative judgement via online software (No More Marking). If you have access to a Moodle based virtual learning environment (VLE) at your institution then you can also use the open source comparative judgement moodle plugin developed by Loughborough University: https://moodle.org/plugins/assignsubmission_comparativejudgement This enables Single Sign-On access, integration with existing course workflows, and centralised data and reporting, with all data remaining within your institution.*
