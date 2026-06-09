@@ -17,7 +17,7 @@ There is no single right answer. We are interested in your holistic impression o
 
 Please use the link below to access the judging interface:
 
-**https://tinyurl.com/tryCJ**
+**[https://tinyurl.com/tryCJ](https://tinyurl.com/tryCJ)**
 
 You will need to complete approximately **20 comparisons**. This should take around **5 minutes**.
 
@@ -30,8 +30,8 @@ You will need to complete approximately **20 comparisons**. This should take aro
 
 ## Questions or problems?
 
-If you have any difficulties accessing the judging interface or have questions about the task, please contact **Liz Dodson: e.a.dodson@lboro.ac.uk**.
+If you have any difficulties accessing the judging interface or have questions about the task, please contact **[Liz Dodson: e.a.dodson@lboro.ac.uk](mailto:e.a.dodson@lboro.ac.uk)**.
 
 ---
 
-*The purpose of this task is to provide hands on experience of comparative judgement via online software (No More Marking). If you have access to a Moodle based virtual learning environment (VLE) at your institution then you can also use the open source comparative judgement moodle plugin developed by Loughborough University: https://moodle.org/plugins/assignsubmission_comparativejudgement This enables Single Sign-On access, integration with existing course workflows, and centralised data and reporting, with all data remaining within your institution.*
+*The purpose of this task is to provide hands on experience of comparative judgement via online software (No More Marking). If you have access to a Moodle based virtual learning environment (VLE) at your institution then you can also use the open source comparative judgement moodle plugin developed by Loughborough University: [https://moodle.org/plugins/assignsubmission_comparativejudgement](https://moodle.org/plugins/assignsubmission_comparativejudgement). This enables Single Sign-On access, integration with existing course workflows, and centralised data and reporting, with all data remaining within your institution.*
