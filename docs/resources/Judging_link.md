@@ -1,3 +1,8 @@
+---
+id: CJtask
+title: CJtask
+---
+
 # Comparative Judgement Task: Student short answers about AI ethics
 
 Welcome to this comparative judgement activity. Thank you for taking the time to participate.
