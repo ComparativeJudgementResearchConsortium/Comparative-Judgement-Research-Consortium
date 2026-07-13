@@ -58,7 +58,7 @@ sidebar_label: Home
  	</div>
 </div>
 
-This international group brings together researchers and practitioners from diverse fields including mathematics, education, psychology, and computer science. We are dedicated to advancing the understanding and application of comparative judgement through collaborative research and practice. The group was founded in 2023 by [Ian Jones](https://www.lboro.ac.uk/departments/maths-education/staff/ian-jones/), [Marie-Josee Bisson](https://www.dmu.ac.uk/about-dmu/academic-staff/health-and-life-sciences/marie-josee-bisson/marie-josee-bisson.aspx), and [Rowland Seymour](https://www.birmingham.ac.uk/staff/profiles/maths/seymour-rowland). 
+This international group brings together researchers and practitioners from diverse fields including mathematics, education, psychology, and computer science. We are dedicated to advancing the understanding and application of comparative judgement through collaborative research and practice. The group was founded in 2023 by [Ian Jones](https://www.lboro.ac.uk/departments/maths-education/staff/ian-jones/), [Marie-Josee Bisson](https://www.lboro.ac.uk/schools/science/staff/marie-josee-bisson/), and [Rowland Seymour](https://www.birmingham.ac.uk/staff/profiles/maths/seymour-rowland). 
 
 Join us for regular meetings, take part in our online reading group, access our comprehensive resource lists, and connect with a vibrant community committed to innovation and excellence in comparative judgement. Explore our site to learn more about our work and how you can get involved!
 
