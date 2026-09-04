@@ -7,6 +7,7 @@ We run a regular reading group discussing comparative judgement papers from a wi
 
 | Month       | Citation |
 |-------------|----------|
+| September 26 | Machado, D. (2026). Generative AI bias against scientific novelty: A cautionary tale from a small-sample evaluation of research proposals. Scientometrics. [https://doi.org/10.1007/s11192-026-05792-x](https://doi.org/10.1007/s11192-026-05792-x) |
 | June 26 | Stadthagen-González, H., Parafita Couto, M. C., Párraga, C. A., & Damian, M. F. (2019). Testing alternative theoretical accounts of code-switching: Insights from comparative judgments of adjective–noun order. International Journal of Bilingualism, 23(1), 200–220. [https://doi.org/10.1177/1367006917728390](https://doi.org/10.1177/1367006917728390) |
 | May 26 |Zerman, E., Hulusic, V., Valenzise, G., Mantiuk, R. K., & Dufaux, F. (2018). The relation between MOS and pairwise comparisons and the importance of cross-content comparisons. Electronic Imaging, 30, 1–6. [https://doi.org/10.48550/arXiv.2510.09333](https://doi.org/10.2352/ISSN.2470-1173.2018.14.HVEI-517)|
 | February 26 |Aczel, T., Theis, L., & Roger, W. (2025). Efficient Bayesian Inference from Noisy Pairwise Comparisons. arXiv Preprint arXiv:2510.09333. [https://doi.org/10.48550/arXiv.2510.09333](https://doi.org/10.48550/arXiv.2510.09333) |
