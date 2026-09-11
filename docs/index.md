@@ -7,23 +7,25 @@ sidebar_label: Home
 
 <!-- Page-scoped styles for hero (edit text below as needed) -->
 <style>
-	.hero { background: linear-gradient(90deg,#0ea5a6 0%,#2563eb 60%,#7c3aed 100%); color:#fff; padding:48px 20px; border-radius:8px; margin:18px 0; }
+	.hero { background: linear-gradient(90deg,#1c2b5c 0%,#243a73 100%); color:#fff; padding:48px 20px; border-radius:8px; margin:18px 0; }
 	.hero-inner { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:24px; }
 	.hero h1 { font-size:2.05rem; line-height:1.12; margin:0 0 10px; font-weight:700; }
-	.hero-sub { margin:0 0 18px; color: rgba(235,246,255,0.9); font-size:1.05rem; }
-	.cta-row .btn { background:#ffffff; color:#1f2937; border:none; padding:10px 18px; border-radius:8px; font-weight:600; }
+	.hero-sub { margin:0 0 18px; color: rgba(255,255,255,0.85); font-size:1.05rem; }
+	.cta-row .btn { background:#6b7f3e; color:#ffffff; border:none; padding:10px 18px; border-radius:8px; font-weight:600; }
+	.cta-row .btn:hover { background:#7d9349; color:#ffffff; }
 	.cta-row .btn[disabled] { opacity:0.9; cursor:default; }
 	@media (max-width:700px) { .hero { padding:28px 12px; } .hero h1 { font-size:1.5rem; } }
 	@media (max-width:700px) { .hero-inner { flex-direction:column; align-items:flex-start; } .hero-logo img { max-height:80px; margin-top:12px; } }
 
 	/* Signup card + generic buttons (used in Joining the Group) */
-	.signup-card { background: rgba(0, 76, 255, 0.5); border: 1px solid rgba(96,165,250,0.06); padding:18px; border-radius:8px; margin:14px 0 22px; }
+	.signup-card { background: rgba(28, 43, 92, 0.08); border: 1px solid rgba(28, 43, 92, 0.15); padding:18px; border-radius:8px; margin:14px 0 22px; }
 	.signup-card p { margin:0 0 8px; color: rgba(0,0,0,0.8); }
 	.signup-card ul { margin:0 0 12px; padding-left:20px; color: rgba(0,0,0,0.8); }
 	.btn { display:inline-block; text-decoration:none; padding:10px 16px; border-radius:8px; font-weight:600; }
-	.btn-primary { background:#2563eb; color:white; border: none; }
+	.btn-primary { background:#1c2b5c; color:white; border: none; }
+	.btn-primary:hover { background:#243a73; color:white; }
 	@media (prefers-color-scheme: dark) {
-		.signup-card { background: rgba(0, 76, 225, 0.5); }
+		.signup-card { background: rgba(28, 43, 92, 0.45); }
 		.signup-card p, .signup-card ul { color: rgba(255,255,255,0.92); }
 	}
 </style>
@@ -40,7 +42,7 @@ sidebar_label: Home
 	.carousel-button.next { right:8px; }
 	.carousel-dots { display:flex; gap:8px; justify-content:center; margin-top:10px; }
 	.carousel-dots .dot { width:10px; height:10px; border-radius:50%; background:#cbd5e1; border:none; cursor:pointer; }
-	.carousel-dots .dot.active { background:#2563eb; }
+	.carousel-dots .dot.active { background:#1c2b5c; }
 	@media (max-width:700px) { .carousel-slide img { max-height:56px; } .carousel-button { width:32px; height:32px; } }
 </style>
 
@@ -52,7 +54,7 @@ sidebar_label: Home
  			<p class="hero-sub">An interdisciplinary consortium of researchers who use and develop comparative judgement methods.</p>
  			<p class="cta-row"><a class="btn btn-primary" href="http://www.jiscmail.ac.uk/COMPARATIVE-JUDGEMENT" target="_blank" rel="noopener noreferrer">Sign up to our mailing list</a></p>
  		</div>
- 		<div class="hero-logo" style="background:white; padding:10px;">
+ 		<div class="hero-logo" style="background:white; padding:12px 16px; border-radius:8px;">
  			<img src="images/cjrc-logo.png" alt="CJRC logo" style="max-height:110px; width:auto; display:block;" />
  		</div>
  	</div>
