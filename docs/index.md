@@ -9,10 +9,10 @@ sidebar_label: Home
 <style>
 	.hero { background: linear-gradient(90deg,#1c2b5c 0%,#243a73 100%); color:#fff; padding:48px 20px; border-radius:8px; margin:18px 0; }
 	.hero-inner { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:24px; }
-	.hero h1 { font-size:2.05rem; line-height:1.12; margin:0 0 10px; font-weight:700; }
-	.hero-sub { margin:0 0 18px; color: rgba(255,255,255,0.85); font-size:1.05rem; }
-	.cta-row .btn { background:#6b7f3e; color:#ffffff; border:none; padding:10px 18px; border-radius:8px; font-weight:600; }
-	.cta-row .btn:hover { background:#7d9349; color:#ffffff; }
+	.hero h1 { font-size:2.05rem; line-height:1.12; margin:0 0 10px; font-weight:700; color:#ffffff !important; }
+	.hero-sub { margin:0 0 18px; color: rgba(255,255,255,0.88) !important; font-size:1.05rem; }
+	.cta-row .btn { background:#7d9349; color:#ffffff !important; border:none; padding:10px 18px; border-radius:8px; font-weight:600; }
+	.cta-row .btn:hover { background:#8fa55a; color:#ffffff; }
 	.cta-row .btn[disabled] { opacity:0.9; cursor:default; }
 	@media (max-width:700px) { .hero { padding:28px 12px; } .hero h1 { font-size:1.5rem; } }
 	@media (max-width:700px) { .hero-inner { flex-direction:column; align-items:flex-start; } .hero-logo img { max-height:80px; margin-top:12px; } }
