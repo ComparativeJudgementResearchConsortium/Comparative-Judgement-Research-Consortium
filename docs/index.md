@@ -32,10 +32,10 @@ sidebar_label: Home
 
 	/* Track-record strip and activity cards */
 	.stats { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:12px; margin:22px 0 26px; }
-	.stat { background: rgba(107,127,62,0.10); border-radius:8px; padding:16px 14px; text-align:left; }
-	.stat .n { display:block; font-size:2rem; font-weight:800; line-height:1; color:#1c2b5c; }
-	.stat .l { display:block; margin-top:6px; font-size:0.92rem; color:#2f3941; }
-	.stat a { text-decoration:none; }
+	.stat { background:#eef1e6; border-radius:8px; padding:16px 14px; text-align:left; }
+	.stat .n { display:block; font-size:2rem; font-weight:800; line-height:1; color:#1c2b5c !important; }
+	.stat .l { display:block; margin-top:6px; font-size:0.92rem; color:#111111 !important; }
+	.stat a { color:#1c2b5c !important; text-decoration:underline; }
 	.cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:14px; margin:14px 0 26px; }
 	.card { background: rgba(28,43,92,0.06); border-radius:8px; padding:16px 18px; }
 	.card h3 { margin:0 0 6px; font-size:1.05rem; color:#1c2b5c; }
@@ -44,9 +44,6 @@ sidebar_label: Home
 	.how ol { margin:0; padding-left:20px; }
 	.how li { margin-bottom:4px; }
 	@media (prefers-color-scheme: dark) {
-		.stat { background: rgba(107,127,62,0.25); }
-		.stat .n { color:#ffffff; }
-		.stat .l { color: rgba(255,255,255,0.85); }
 		.card, .how { background: rgba(255,255,255,0.06); }
 		.card h3 { color:#ffffff; }
 	}
@@ -82,7 +79,7 @@ sidebar_label: Home
  	</div>
 </div>
 
-The Comparative Judgement Research Consortium (CJRC) brings together researchers and practitioners from statistics, education, psychology, linguistics, political science, computer science and beyond, united by a shared method: comparative judgement. We run regular meetings across the UK and Europe, maintain the largest open collection of comparative judgement datasets, and set the research agenda for the field. The consortium is convened by [Ian Jones](https://www.lboro.ac.uk/departments/maths-education/staff/ian-jones/) (Loughborough University), [Marie-Josée Bisson](https://www.lboro.ac.uk/schools/science/staff/marie-josee-bisson/) (De Montfort University) and [Rowland Seymour](https://www.birmingham.ac.uk/staff/profiles/maths/seymour-rowland) (University of Birmingham).
+The Comparative Judgement Research Consortium (CJRC) brings together researchers and practitioners from statistics, education, psychology, linguistics, political science, computer science and beyond, united by a shared method: comparative judgement. We run regular meetings across the UK and Europe, maintain the largest open collection of comparative judgement datasets, and set the research agenda for the field. The consortium is convened by [Ian Jones](https://www.lboro.ac.uk/departments/maths-education/staff/ian-jones/) (Loughborough University), [Marie-Josée Bisson](https://www.lboro.ac.uk/schools/science/staff/marie-josee-bisson/) (Loughborough University) and [Rowland Seymour](https://www.birmingham.ac.uk/staff/profiles/maths/seymour-rowland) (University of Birmingham).
 
 <div class="stats">
 	<div class="stat"><span class="n">8</span><span class="l">meetings held since 2024, in the UK and Belgium</span></div>
