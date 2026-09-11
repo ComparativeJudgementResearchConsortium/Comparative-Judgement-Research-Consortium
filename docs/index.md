@@ -1,6 +1,6 @@
 ---
 id: index
-title: Welcome to the Comparative Judgement Research Consortium!
+title: The international network for comparative judgement research
 sidebar_label: Home
 ---
 
@@ -29,6 +29,27 @@ sidebar_label: Home
 		.signup-card { background: rgba(28, 43, 92, 0.45); }
 		.signup-card p, .signup-card ul { color: rgba(255,255,255,0.92); }
 	}
+
+	/* Track-record strip and activity cards */
+	.stats { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:12px; margin:22px 0 26px; }
+	.stat { background: rgba(107,127,62,0.10); border-radius:8px; padding:16px 14px; text-align:left; }
+	.stat .n { display:block; font-size:2rem; font-weight:800; line-height:1; color:#1c2b5c; }
+	.stat .l { display:block; margin-top:6px; font-size:0.92rem; color:#2f3941; }
+	.stat a { text-decoration:none; }
+	.cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:14px; margin:14px 0 26px; }
+	.card { background: rgba(28,43,92,0.06); border-radius:8px; padding:16px 18px; }
+	.card h3 { margin:0 0 6px; font-size:1.05rem; color:#1c2b5c; }
+	.card p { margin:0; font-size:0.95rem; }
+	.how { background: rgba(28,43,92,0.06); padding:16px 18px; border-radius:8px; margin:16px 0; }
+	.how ol { margin:0; padding-left:20px; }
+	.how li { margin-bottom:4px; }
+	@media (prefers-color-scheme: dark) {
+		.stat { background: rgba(107,127,62,0.25); }
+		.stat .n { color:#ffffff; }
+		.stat .l { color: rgba(255,255,255,0.85); }
+		.card, .how { background: rgba(255,255,255,0.06); }
+		.card h3 { color:#ffffff; }
+	}
 </style>
 
 <!-- Carousel styles for acknowledgements logos -->
@@ -52,7 +73,7 @@ sidebar_label: Home
  	<div class="hero-inner">
  		<div class="hero-text">
  			<h1>Comparative Judgement Research Consortium</h1>
- 			<p class="hero-sub">An interdisciplinary consortium of researchers who use and develop comparative judgement methods.</p>
+ 			<p class="hero-sub">An international consortium of researchers and practitioners who use, apply and develop comparative judgement methods.</p>
  			<p class="cta-row"><a class="btn btn-primary" href="http://www.jiscmail.ac.uk/COMPARATIVE-JUDGEMENT" target="_blank" rel="noopener noreferrer">Sign up to our mailing list</a></p>
  		</div>
  		<div class="hero-logo" style="background:white; padding:12px 16px; border-radius:8px;">
@@ -61,42 +82,61 @@ sidebar_label: Home
  	</div>
 </div>
 
-This international group brings together researchers and practitioners from diverse fields including mathematics, education, psychology, and computer science. We are dedicated to advancing the understanding and application of comparative judgement through collaborative research and practice. The group was founded in 2023 by [Ian Jones](https://www.lboro.ac.uk/departments/maths-education/staff/ian-jones/), [Marie-Josee Bisson](https://www.lboro.ac.uk/schools/science/staff/marie-josee-bisson/), and [Rowland Seymour](https://www.birmingham.ac.uk/staff/profiles/maths/seymour-rowland). 
+The Comparative Judgement Research Consortium (CJRC) brings together researchers and practitioners from statistics, education, psychology, linguistics, political science, computer science and beyond, united by a shared method: comparative judgement. We run regular meetings across the UK and Europe, maintain the largest open collection of comparative judgement datasets, and set the research agenda for the field. The consortium is convened by [Ian Jones](https://www.lboro.ac.uk/departments/maths-education/staff/ian-jones/) (Loughborough University), [Marie-Josée Bisson](https://www.lboro.ac.uk/schools/science/staff/marie-josee-bisson/) (De Montfort University) and [Rowland Seymour](https://www.birmingham.ac.uk/staff/profiles/maths/seymour-rowland) (University of Birmingham).
 
-Join us for regular meetings, take part in our online reading group, access our comprehensive resource lists, and connect with a vibrant community committed to innovation and excellence in comparative judgement. Explore our site to learn more about our work and how you can get involved!
+<div class="stats">
+	<div class="stat"><span class="n">8</span><span class="l">meetings held since 2024, in the UK and Belgium</span></div>
+	<div class="stat"><span class="n">36</span><span class="l"><a href="/cj_rave.html">grand-challenge research questions</a> co-created by 25 experts</span></div>
+	<div class="stat"><span class="n">105</span><span class="l"><a href="/resources/repo.html">open comparative judgement datasets</a></span></div>
+	<div class="stat"><span class="n">50+</span><span class="l">papers in our <a href="/resources/articles.html">bibliography</a>, 2013 to today</span></div>
+</div>
 
-## Joining the Group
+## What we do
+
+<div class="cards">
+	<div class="card">
+		<h3>Meetings</h3>
+		<p>Full-day meetings several times a year, hosted by member institutions, with talks from across the disciplines and structured discussion. The next is at <a href="/meetings/2026-oct.html">Loughborough University on 13 October 2026</a>.</p>
+	</div>
+	<div class="card">
+		<h3>Grand Challenges</h3>
+		<p>In May 2026, 25 experts from statistics, education, psychology, politics and computer science co-created a <a href="/cj_rave.html">research agenda for comparative judgement</a>: 36 open questions in seven themes.</p>
+	</div>
+	<div class="card">
+		<h3>Reading group</h3>
+		<p>An online <a href="/reading_group.html">reading group</a>, running since 2024, discussing papers from Thurstone (1927) to the latest work on comparative judgement and large language models.</p>
+	</div>
+	<div class="card">
+		<h3>Resources</h3>
+		<p>A curated <a href="/resources/repo.html">data repository</a>, a <a href="/resources/articles.html">bibliography</a>, a guide to <a href="/resources/software.html">software</a> for collecting and analysing comparisons, and <a href="/resources/guidance.html">guidance</a> for researchers new to the method.</p>
+	</div>
+</div>
+
+## What is comparative judgement?
+
+Comparative judgement is a method for measuring quality, or any other latent trait, by asking judges to compare items in pairs rather than to score them one at a time. Its foundations go back to Thurstone's (1927) *law of comparative judgement*, and it rests on a simple observation: people are far more consistent at deciding which of two things is better than at placing one thing on an absolute scale.
+
+<div class="how">
+	<ol>
+		<li>Judges are shown two items, such as essays, proofs, images or research proposals, and choose which is better against a holistic criterion.</li>
+		<li>Many such decisions are collected from many judges, with each item appearing in several pairs.</li>
+		<li>A statistical model, typically Bradley&ndash;Terry or a Bayesian extension of it, combines the decisions into a measurement scale for the items and estimates its reliability.</li>
+	</ol>
+</div>
+
+Comparative judgement is now used well beyond its origins in educational assessment: in psychology to measure conceptual understanding, in linguistics to study language processing, in political science to measure attitudes and priorities, in statistics to model everything from urban deprivation to sports results, and increasingly to evaluate the outputs of large language models. Members of the consortium have published on all of these; our [bibliography](/resources/articles.html) is a good place to start, and our [guidance](/resources/guidance.html) page explains how to run a first study.
+
+## Join the consortium
+
+Membership is open to anyone working with, or interested in, comparative judgement. Joining our mailing list brings news of meetings, the reading group and calls for collaboration.
 
 <div class="signup-card">
-	<ul>
-		<li><strong>Email:</strong> Send an email to <code>LISTSERV@JISCMAIL.AC.UK</code> with the body <code>SUBSCRIBE COMPARATIVE-JUDGEMENT FirstName LastName</code> to subscribe via email.</li>
-		<li><strong>Online:</strong> Subscribe via the JISCMail page below.</li>
-	</ul>
 	<p><a class="btn btn-primary" href="http://www.jiscmail.ac.uk/COMPARATIVE-JUDGEMENT" target="_blank" rel="noopener noreferrer">Subscribe on JISCMail</a></p>
+	<p>Alternatively, email <code>LISTSERV@JISCMAIL.AC.UK</code> with the message body <code>SUBSCRIBE COMPARATIVE-JUDGEMENT FirstName LastName</code>.</p>
 </div>
-
-## What is Comparative Judgement
-Comparative judgment is a method used in assessment and evaluation to compare and rank different items or performances based on their perceived quality or merit. Instead of assigning absolute scores or grades to individual items, comparative judgment involves comparing pairs of items and determining which is better or of higher quality.
-
-Here's a simplified explanation of how comparative judgment works:
-
-<!-- Feature card: simplified workflow -->
-<div style="background: rgba(255,255,255,0.04); border-left: 4px solid #60a5fa; padding:16px; border-radius:8px; margin:16px 0;">
-	<strong style="display:block; font-size:1.05em; margin-bottom:8px;">How comparative judgement works</strong>
-	<ul style="margin:0; padding-left:18px;">
-		<li> Assessors are presented with pairs to compare (e.g., essays, project proposals, artwork).</li>
-		<li> Assessors choose which item is better based on criteria or professional judgement.</li>
-		<li> Many pairwise comparisons are collected across assessors and items.</li>
-		<li>The collected judgments are analysed to produce a ranked ordering of items.</li>
-	</ul>
-</div>
-
-One advantage of comparative judgment is that it allows for a more nuanced and reliable assessment by leveraging the human ability to make qualitative distinctions. It can be especially useful when evaluating complex or subjective tasks where assigning numerical scores may be challenging.
-
-There are both manual and automated ways to implement comparative judgment. Manual methods involve people making the comparisons, while automated systems use algorithms to analyze the data and derive rankings. Automated systems can efficiently handle large-scale assessments, making comparative judgment a versatile approach in various fields, including education, art, and professional evaluations.
 
 ## Acknowledgements
-This group was set up through a National Centre for Research Methods Special Interest Group grant and then sustained with support from the London Mathematical Society, Bath Spa University, an EPSRC Mathematical Sciences Discipline Hopping Grant [UKRI2389], and a UKRI Future Leaders Fellowship [MR/X034992/1].
+Our work is supported by the Engineering and Physical Sciences Research Council through a Mathematical Sciences Discipline Hopping Grant [UKRI2389] and a UKRI Future Leaders Fellowship [MR/X034992/1]. The consortium was established with a National Centre for Research Methods Special Interest Group grant, and our meetings have been hosted and funded by the London Mathematical Society, Bath Spa University, De Montfort University, the University of Birmingham, Loughborough University and the Université de Liège.
 
 <!-- Logos carousel (one logo per slide) -->
 <div class="carousel" aria-roledescription="carousel" aria-label="Acknowledgements logos">
