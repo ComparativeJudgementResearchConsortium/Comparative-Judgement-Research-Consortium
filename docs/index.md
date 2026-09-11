@@ -10,6 +10,7 @@ sidebar_label: Home
 	.hero { background: linear-gradient(90deg,#1c2b5c 0%,#243a73 100%); color:#fff; padding:48px 20px; border-radius:8px; margin:18px 0; }
 	.hero-inner { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:24px; }
 	.hero h1 { font-size:2.05rem; line-height:1.12; margin:0 0 10px; font-weight:700; color:#ffffff !important; }
+	.hero h1 a, .hero h1 .heading_link { color:#ffffff !important; text-decoration:none; }  /* the theme wraps heading text in a link */
 	.hero-sub { margin:0 0 18px; color: rgba(255,255,255,0.88) !important; font-size:1.05rem; }
 	.cta-row .btn { background:#7d9349; color:#ffffff !important; border:none; padding:10px 18px; border-radius:8px; font-weight:600; }
 	.cta-row .btn:hover { background:#8fa55a; color:#ffffff; }
