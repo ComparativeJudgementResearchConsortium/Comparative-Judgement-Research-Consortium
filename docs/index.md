@@ -53,7 +53,7 @@ sidebar_label: Home
  			<p class="cta-row"><a class="btn btn-primary" href="http://www.jiscmail.ac.uk/COMPARATIVE-JUDGEMENT" target="_blank" rel="noopener noreferrer">Sign up to our mailing list</a></p>
  		</div>
  		<div class="hero-logo" style="background:white; padding:10px;">
- 			<img src="images/CJLogotransparentsmall.png" alt="CJRC logo" style="max-height:110px; width:auto; display:block;" />
+ 			<img src="images/cjrc-logo.png" alt="CJRC logo" style="max-height:110px; width:auto; display:block;" />
  		</div>
  	</div>
 </div>
@@ -98,7 +98,7 @@ This group was set up through a National Centre for Research Methods Special Int
 <!-- Logos carousel (one logo per slide) -->
 <div class="carousel" aria-roledescription="carousel" aria-label="Acknowledgements logos">
 	<div class="carousel-track">
-		<div class="carousel-slide"><img src="images/CJLogotransparentsmall.png" alt="CJRC logo" /></div>
+		<div class="carousel-slide"><img src="images/cjrc-logo.png" alt="CJRC logo" /></div>
 		<div class="carousel-slide"><img src="images/GH1vOv-XMAAanko.jpg" alt="Bath Spa logo" /></div>
 		<div class="carousel-slide"><img src="images/EPSRC.png" alt="EPSRC logo" /></div>
 		<div class="carousel-slide"><img src="images/NCRM_logo.jpg" alt="NCRM logo" /></div>
