@@ -79,7 +79,7 @@ sidebar_label: Home
  	</div>
 </div>
 
-The Comparative Judgement Research Consortium (CJRC) brings together researchers and practitioners from statistics, education, psychology, linguistics, political science, computer science and beyond, united by a shared method: comparative judgement. We run regular meetings across the UK and Europe, maintain the largest open collection of comparative judgement datasets, and set the research agenda for the field. The consortium is convened by [Ian Jones](https://www.lboro.ac.uk/departments/maths-education/staff/ian-jones/) (Loughborough University), [Marie-Josée Bisson](https://www.lboro.ac.uk/schools/science/staff/marie-josee-bisson/) (Loughborough University) and [Rowland Seymour](https://www.birmingham.ac.uk/staff/profiles/maths/seymour-rowland) (University of Birmingham).
+The Comparative Judgement Research Consortium (CJRC) brings together researchers and practitioners from statistics, education, psychology, linguistics, political science, computer science and beyond to discuss comparative judgement. We run regular meetings across the UK and Europe, maintain the largest open collection of comparative judgement datasets, and set the research agenda for the field. The consortium is convened by [Ian Jones](https://www.lboro.ac.uk/departments/maths-education/staff/ian-jones/) (Loughborough University), [Marie-Josée Bisson](https://www.lboro.ac.uk/schools/science/staff/marie-josee-bisson/) (Loughborough University) and [Rowland Seymour](https://www.birmingham.ac.uk/staff/profiles/maths/seymour-rowland) (University of Birmingham).
 
 <div class="stats">
 	<div class="stat"><span class="n">8</span><span class="l">meetings held since 2024, in the UK and Belgium</span></div>
@@ -93,7 +93,7 @@ The Comparative Judgement Research Consortium (CJRC) brings together researchers
 <div class="cards">
 	<div class="card">
 		<h3>Meetings</h3>
-		<p>Full-day meetings several times a year, hosted by member institutions, with talks from across the disciplines and structured discussion. The next is at <a href="/meetings/2026-oct.html">Loughborough University on 13 October 2026</a>.</p>
+		<p>Full-day meetings several times a year, hosted by member institutions, with talks from across the disciplines and structured discussion.</p>
 	</div>
 	<div class="card">
 		<h3>Grand Challenges</h3>
@@ -111,7 +111,7 @@ The Comparative Judgement Research Consortium (CJRC) brings together researchers
 
 ## What is comparative judgement?
 
-Comparative judgement is a method for measuring quality, or any other latent trait, by asking judges to compare items in pairs rather than to score them one at a time. Its foundations go back to Thurstone's (1927) *law of comparative judgement*, and it rests on a simple observation: people are far more consistent at deciding which of two things is better than at placing one thing on an absolute scale.
+Comparative judgement is a method for measuring quality, or any other latent trait, by asking judges to compare items in pairs rather than to score them one at a time. Its foundations go back to Thurstone's (1927) *law of comparative judgement*, which says that people are far more consistent at deciding which of two things is better than at placing one thing on an absolute scale.
 
 <div class="how">
 	<ol>
@@ -121,7 +121,7 @@ Comparative judgement is a method for measuring quality, or any other latent tra
 	</ol>
 </div>
 
-Comparative judgement is now used well beyond its origins in educational assessment: in psychology to measure conceptual understanding, in linguistics to study language processing, in political science to measure attitudes and priorities, in statistics to model everything from urban deprivation to sports results, and increasingly to evaluate the outputs of large language models. Members of the consortium have published on all of these; our [bibliography](/resources/articles.html) is a good place to start, and our [guidance](/resources/guidance.html) page explains how to run a first study.
+Comparative judgement is now used across social and physical sciences. For example, in psychology to measure conceptual understanding, in linguistics to study language processing, in political science to measure attitudes and priorities, in statistics to model everything from urban deprivation to sports results, and increasingly to evaluate the outputs of large language models. Members of the consortium have published on all of these; our [bibliography](/resources/articles.html) is a good place to start, and our [guidance](/resources/guidance.html) page explains how to run a first study.
 
 ## Join the consortium
 
