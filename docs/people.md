@@ -15,7 +15,7 @@ title: People
 	.person a { color:#1c2b5c; }
 </style>
 
-The consortium is convened by three researchers from statistics, psychology and mathematics education, whose collaboration reflects the interdisciplinary reach of comparative judgement itself.
+The consortium is directed by three researchers from statistics, psychology and mathematics education, whose collaboration reflects the interdisciplinary reach of comparative judgement itself.
 
 ## Conveners
 
@@ -36,12 +36,12 @@ The consortium is convened by three researchers from statistics, psychology and 
 		<img src="/images/people/rowland-seymour.jpg" alt="Rowland Seymour" />
 		<h3><a href="https://www.birmingham.ac.uk/staff/profiles/maths/seymour-rowland">Rowland Seymour</a></h3>
 		<p class="role">Associate Professor of Statistics, University of Birmingham</p>
-		<p>Rowland is a Bayesian statistician who develops the models and computational methods behind comparative judgement, including spatial and clustered extensions of the Bradley–Terry model and the <a href="https://cran.r-project.org/package=speedyBBT">speedyBBT</a> R package. His applied work uses comparative judgement to measure things that are otherwise hard to quantify, from urban deprivation to the prevalence of modern slavery and forced marriage. He holds a UKRI Future Leaders Fellowship and completed his PhD at the University of Nottingham, where he was a founding member of the Rights Lab's prevalence and computation group.</p>
+		<p>Rowland is a Bayesian statistician who develops the models and computational methods behind comparative judgement, including spatial and clustered extensions of the Bradley–Terry model and the <a href="https://cran.r-project.org/package=speedyBBT">speedyBBT</a> R package. His applied work uses comparative judgement to measure things that are otherwise hard to quantify, from urban deprivation to the prevalence of modern slavery and forced marriage. He holds a UKRI Future Leaders Fellowship and completed his PhD at the University of Nottingham.</p>
 	</div>
 </div>
 
 ## Members
 
-The consortium's members come from universities, assessment organisations and industry across the United Kingdom, Belgium, the Netherlands, Ireland, New Zealand and beyond. Our meetings have featured speakers from, among others, University College London, the University of Edinburgh, the University of Nottingham, the University of Stirling, Goldsmiths, the Université de Liège, the Universiteit Antwerpen, KU Leuven, Massey University, Ofqual, Cambridge University Press &amp; Assessment, No More Marking and Comproved.
+The consortium's members come from universities, assessment organisations and industry. Our meetings have featured speakers from, among others, University College London, the University of Edinburgh, the University of Nottingham, the University of Stirling, Goldsmiths, the Université de Liège, the Universiteit Antwerpen, KU Leuven, Massey University, Ofqual, Cambridge University Press &amp; Assessment, No More Marking and Comproved.
 
 Membership is open to anyone working with, or interested in, comparative judgement: [join the mailing list](/index.html#join-the-consortium) to take part.

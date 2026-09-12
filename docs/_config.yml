@@ -22,6 +22,8 @@ sidebar:
         - guidance
         - repo
         - software
+    - label: Research Agenda
+      children:
+        - cj_rave
+        - barriers
     - reading_group
-    - barriers
-    - cj_rave
