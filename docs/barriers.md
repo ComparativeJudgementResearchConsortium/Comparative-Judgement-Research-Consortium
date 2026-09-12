@@ -1,6 +1,6 @@
 ---
 id: barriers
-title: Barriers to CJ
+title: Barriers to using CJ (2025)
 ---
 
 # Activity

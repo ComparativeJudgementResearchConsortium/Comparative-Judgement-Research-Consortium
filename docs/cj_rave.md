@@ -1,6 +1,6 @@
 ---
 id: cj_rave
-title: CJ RAVE Dataset
+title: Grand Challenges 2026
 ---
 
 ## Overview
