@@ -4,6 +4,7 @@ search_enabled: true
 auto_page_title: true
 sidebar:
     - index
+    - people
     - label: Meetings
       children:
         - 2024-january
