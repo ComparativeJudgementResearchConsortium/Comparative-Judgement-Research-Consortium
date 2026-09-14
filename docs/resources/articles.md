@@ -2,6 +2,12 @@
 id: articles
 title: Articles
 ---
+## 2026
+
+| Title        | Authors | Publication |  Paper  |  Code  | Tags | Notes |
+| --------     | :-----: | :-----: |  :----: | :----: |----|----|
+| Learning by comparing: internal feedback and evaluative judgement in peer assessment with comparative judgement |  Marie Hoffelinck, Marie Housen, Florence Pirard, Dominique Verpoorten, Krystel Ciura | ssessment & Evaluation in Higher Education  | [paper](https://doi.org/10.1080/02602938.2026.2725799) | [data](https://osf.io/emh34/overview?view_only=f7aaffa3f71544e59cf10841d80531b3) | | |
+
 ## 2025
 
 | Title        | Authors | Publication |  Paper  |  Code  | Tags | Notes |
