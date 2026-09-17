@@ -85,7 +85,7 @@ The Comparative Judgement Research Consortium (CJRC) brings together researchers
 	<div class="stat"><span class="n">8</span><span class="l">meetings held since 2024, in the UK and Belgium</span></div>
 	<div class="stat"><span class="n">36</span><span class="l"><a href="/cj_rave.html">grand-challenge research questions</a> co-created by 25 experts</span></div>
 	<div class="stat"><span class="n">105</span><span class="l"><a href="/resources/repo.html">open comparative judgement datasets</a></span></div>
-	<div class="stat"><span class="n">50+</span><span class="l">papers in our <a href="/resources/articles.html">bibliography</a>, 2013 to today</span></div>
+	<div class="stat"><span class="n">50+</span><span class="l">papers in our <a href="/resources/articles.html">bibliography</a></span></div>
 </div>
 
 ## What we do
