@@ -1,6 +1,6 @@
 ---
 id: index
-title: The international network for comparative judgement research
+title: 
 sidebar_label: Home
 ---
 
