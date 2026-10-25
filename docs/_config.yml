@@ -25,6 +25,7 @@ sidebar:
         - software
     - label: Research Agenda
       children:
+        - discussion_themes
         - cj_rave
         - barriers
     - reading_group
