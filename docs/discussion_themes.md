@@ -1,6 +1,6 @@
 ---
 id: discussion_themes
-title: Discussion themes from Oct 2026 meeting
+title: Discussion themes 2026
 ---
 
 ## Overview
