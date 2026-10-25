@@ -1,6 +1,6 @@
 ---
 id: 2026-december-learning
-title: Learning Special #2 2026
+title: Learning Day 2 2026
 ---
 
 # Special Meeting of the Comparative Judgement Research Consortium
