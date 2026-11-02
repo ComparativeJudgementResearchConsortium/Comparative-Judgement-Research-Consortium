@@ -1,0 +1,8 @@
+{% comment %}Previous / next links for the Moodle plugin user guide. Page order is in _data/moodle_guide.yml.{% endcomment %}
+{% assign pages = site.data.moodle_guide %}
+{% for p in pages %}{% if p.url == page.url %}{% assign here = forloop.index0 %}{% endif %}{% endfor %}
+<nav class="moodle-guide-nav" style="display:flex; justify-content:space-between; gap:1em; flex-wrap:wrap; margin-top:2em; padding-top:1em; border-top:1px solid #ddd;">
+  <span>{% if here and here > 0 %}{% assign prev = here | minus: 1 %}<a href="{{ pages[prev].url }}">&larr; {{ pages[prev].title }}</a>{% endif %}</span>
+  <span><a href="/resources/moodle-plugin/user-guide/">Contents</a></span>
+  <span>{% if here != nil %}{% assign next = here | plus: 1 %}{% if pages[next] %}<a href="{{ pages[next].url }}">{{ pages[next].title }} &rarr;</a>{% endif %}{% endif %}</span>
+</nav>

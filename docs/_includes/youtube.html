@@ -1,0 +1,4 @@
+{% comment %}Embed a YouTube video in a guide page by including youtube.html with id="VIDEO_ID" and title="What the video shows".{% endcomment %}
+<div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; margin:1em 0;">
+  <iframe src="https://www.youtube-nocookie.com/embed/{{ include.id }}" title="{{ include.title | default: 'Video' }}" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+</div>
