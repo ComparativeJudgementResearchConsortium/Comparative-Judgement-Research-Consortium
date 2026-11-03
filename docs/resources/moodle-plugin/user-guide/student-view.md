@@ -5,7 +5,7 @@ title: The student perspective
 
 {% include moodle-guide-draft.html %}
 
-For many students, using comparative judgement will be new and it is important to introduce the concept before running the practical session. Explain the "why" before the "how."
+For many students, using comparative judgement will be new and it is important to introduce the concept before running the practical session. Explain the "why" before the "how".
 
 Students are used to rubrics and marks, so a task with neither can feel unusual at first. A short, plain-language explanation helps, e.g.: you'll see two pieces of work, choose which is better overall, and repeat this several times with different pairs. Many judgements from many people are combined into a rank order. Due to the maths behind this process, even if there is some variation in the decisions made, the overall collective ranking will be valid and reliable.
 
@@ -35,7 +35,7 @@ Below the instructions, they will see the first pair of items to judge
 
 ![A pair of items to judge](/images/moodle-plugin/user-guide/judging-pair.png)
 
-We opted in the settings to include comments. So those boxes are immediately below the items to be judged, with the selection buttons (Choose A / Choose B) available at both the top and bottom of the page.
+We opted in the settings to include comments. So those boxes are immediately below the items to be judged, with the selection buttons (**Choose A** / **Choose B**) available at both the top and bottom of the page.
 
 ![Comment boxes and the Choose A / Choose B buttons](/images/moodle-plugin/user-guide/comment-boxes.png)
 
