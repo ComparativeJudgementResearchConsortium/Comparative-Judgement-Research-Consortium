@@ -43,9 +43,6 @@ As with any other Moodle group assignment, you need to start by creating your gr
 | **Grouping for student groups** | If students are changing groups throughout the course then you need to select the groups here for this assignment. If they are staying in their standard groups that you set up at the beginning of the course then ignore this and their groups will automatically be selected. |
 | **Require group to make submission** | If you select yes, then students must be in a group to be able to submit. If they are not assigned to a group they will not have the option to submit, |
 
-[Using the Learn Assignment Activity for Groupwork](https://lunet.sharepoint.com/sites/EAP/TEL/SitePages/Creating%20a%20Learn%20Assignment%20Activity%20for%20Groupwork.aspx)
-
-[Moodle in English: 2.4 ASSIGNMENT - "grouping for student groups" | Moodle.org](https://moodle.org/mod/forum/discuss.php?d=216399)
 
 ## Notifications
 
