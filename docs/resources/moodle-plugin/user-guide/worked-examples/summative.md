@@ -5,7 +5,11 @@ title: Worked example - summative use
 
 {% include moodle-guide-draft.html %}
 
-<img src="/images/moodle-plugin/user-guide/icon-handwritten-work.png" alt="Handwritten work" width="140" /> <img src="/images/moodle-plugin/user-guide/icon-students-alone.png" alt="Students worked alone" width="140" /> <img src="/images/moodle-plugin/user-guide/icon-summative.png" alt="Summative assessment" width="140" />
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem;">
+  <img src="/images/moodle-plugin/user-guide/icon-handwritten-work.png" alt="Handwritten work" width="140" />
+  <img src="/images/moodle-plugin/user-guide/icon-students-alone.png" alt="Students worked alone" width="140" />
+  <img src="/images/moodle-plugin/user-guide/icon-summative.png" alt="Summative assessment" width="140" />
+</div>
 
 As we repeated a formative assessment (from a choice of three) as a summative assessment, much of the assignment setup shown here is very similar to the formative example, but with a few key differences around when students can judge, how many judgements they must do and why we might include some exemplar submissions. 
 
