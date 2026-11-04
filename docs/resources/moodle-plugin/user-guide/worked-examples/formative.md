@@ -1,6 +1,6 @@
 ---
 id: mp-guide-formative
-title: Worked example: formative use
+title: Worked example - formative use
 ---
 
 {% include moodle-guide-draft.html %}
