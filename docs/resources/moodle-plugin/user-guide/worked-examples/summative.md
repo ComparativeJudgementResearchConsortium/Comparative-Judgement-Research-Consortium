@@ -1,6 +1,6 @@
 ---
 id: mp-guide-summative
-title: Worked example: summative use
+title: Worked example - summative use
 ---
 
 {% include moodle-guide-draft.html %}
