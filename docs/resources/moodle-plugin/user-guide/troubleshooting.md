@@ -5,6 +5,16 @@ title: Troubleshooting
 
 {% include moodle-guide-draft.html %}
 
+## A student can't add a submission
+
+The **Add submission** button only appears when all of the following are true:
+
+- the comparative judgement assignment has been set up and is not hidden
+- the **Allow submissions from** date and time has arrived
+- if a **Cut-off date** has been set, it has not passed
+- if it is a group assignment, then the student has been assigned to a group 
+
+
 ## The Do comparison button is missing
 
 The **Do comparison** button only appears when all of the following are true:
