@@ -121,6 +121,5 @@ title: Worked example - formative use
 
    As this was a formative assignment, we asked students to work in pairs, to discuss each set of answers before making their choice.
 
-   > **To do:** placeholder note ("xx: xx") to be written.
-
+   
 {% include moodle-guide-nav.html %}
