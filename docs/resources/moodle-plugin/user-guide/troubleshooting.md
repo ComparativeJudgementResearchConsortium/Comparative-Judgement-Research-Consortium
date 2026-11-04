@@ -33,4 +33,21 @@ When testing in student mode, check in the settings which user groups you have g
 
 See also [Do comparison](/resources/moodle-plugin/user-guide/managing/do-comparison.html).
 
+
+## Still stuck?
+
+If you cannot solve a problem using this guide, there are two ways to get help.
+
+**Report a technical issue on GitHub.** If you have a GitHub account, you can report bugs and other technical problems on the plugin's [GitHub issues page](https://github.com/ianjones/moodle-assignsubmission_comparativejudgement/issues). It is worth checking the existing issues first, in case someone has already reported the same problem.
+
+**Email for advice.** If you do not use GitHub, or you would like advice on using the plugin, email [comparativejudgement@gmail.com](mailto:comparativejudgement@gmail.com).
+
+Whichever you choose, it helps to include:
+
+- what you were trying to do, what you expected to happen and what happened instead
+- your Moodle version and the plugin version, if you know them
+- the browser and device you were using
+- a screenshot, with any student names or other personal information removed
+
+
 {% include moodle-guide-nav.html %}
