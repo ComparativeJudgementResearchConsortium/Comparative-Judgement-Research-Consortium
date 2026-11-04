@@ -7,9 +7,7 @@ title: Worked example: summative use
 
 <img src="/images/moodle-plugin/user-guide/icon-handwritten-work.png" alt="Handwritten work" width="140" /> <img src="/images/moodle-plugin/user-guide/icon-students-alone.png" alt="Students worked alone" width="140" /> <img src="/images/moodle-plugin/user-guide/icon-summative.png" alt="Summative assessment" width="140" />
 
-As we repeated a formative assessment (from a choice of three) as a summative assessment, most of the assignment setup shown here is the same as the previous example. Steps where there are key differences are highlighted in orange.
-
-> **To do:** this section is still being edited and finalised.
+As we repeated a formative assessment (from a choice of three) as a summative assessment, much of the assignment setup shown here is very similar to the formative example, but with a few key differences around when students can judge, how many judgements they must do and why we might include some exemplar submissions. 
 
 1. Give your assignment a title and describe what is expected overall.
 
