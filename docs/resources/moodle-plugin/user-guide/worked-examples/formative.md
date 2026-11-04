@@ -5,7 +5,11 @@ title: Worked example - formative use
 
 {% include moodle-guide-draft.html %}
 
-<img src="/images/moodle-plugin/user-guide/icon-handwritten-work.png" alt="Handwritten work" width="140" /> <img src="/images/moodle-plugin/user-guide/icon-students-in-pairs.png" alt="Students worked in pairs" width="140" /> <img src="/images/moodle-plugin/user-guide/icon-formative.png" alt="Formative assessment" width="140" />
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem;">
+  <img src="/images/moodle-plugin/user-guide/icon-handwritten-work.png" alt="Handwritten work" width="140" />
+  <img src="/images/moodle-plugin/user-guide/icon-students-in-pairs.png" alt="Students worked in pairs" width="140" />
+  <img src="/images/moodle-plugin/user-guide/icon-formative.png" alt="Formative assessment" width="140" />
+</div>
 
 1. Give your assignment a title and describe what is expected overall.
 
