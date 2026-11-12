@@ -1,6 +1,6 @@
 ---
 id: bloomsbury-book
-title: Bloomsbury Book support materials
+title: Bloomsbury Book
 ---
 ## 2026
 
