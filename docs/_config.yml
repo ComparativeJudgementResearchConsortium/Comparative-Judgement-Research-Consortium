@@ -23,6 +23,7 @@ sidebar:
         - guidance
         - repo
         - software
+        - bloomsbury-book
     - label: Research Agenda
       children:
         - discussion_themes
